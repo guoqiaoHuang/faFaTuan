@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1C40A41999B1F900298C2B /* LLBulkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40A31999B1F900298C2B /* LLBulkViewController.m */; };
+		6E1C40A81999B5CE00298C2B /* LLPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40A61999B5CE00298C2B /* LLPPViewController.m */; };
+		6E1C40A91999B5CE00298C2B /* LLPPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C40A71999B5CE00298C2B /* LLPPViewController.xib */; };
 		6E1C70211998BB9400B95440 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70201998BB9400B95440 /* Foundation.framework */; };
 		6E1C70231998BB9400B95440 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70221998BB9400B95440 /* CoreGraphics.framework */; };
 		6E1C70251998BB9400B95440 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70241998BB9400B95440 /* UIKit.framework */; };
@@ -14,13 +17,14 @@
 		6E1C702D1998BB9400B95440 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C702C1998BB9400B95440 /* main.m */; };
 		6E1C70311998BB9400B95440 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C70301998BB9400B95440 /* LLAppDelegate.m */; };
 		6E1C70341998BB9400B95440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C70321998BB9400B95440 /* Main.storyboard */; };
-		6E1C70371998BB9400B95440 /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C70361998BB9400B95440 /* LLViewController.m */; };
 		6E1C70391998BB9400B95440 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C70381998BB9400B95440 /* Images.xcassets */; };
 		6E1C70401998BB9400B95440 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C703F1998BB9400B95440 /* XCTest.framework */; };
 		6E1C70411998BB9400B95440 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70201998BB9400B95440 /* Foundation.framework */; };
 		6E1C70421998BB9400B95440 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70241998BB9400B95440 /* UIKit.framework */; };
 		6E1C704A1998BB9400B95440 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C70481998BB9400B95440 /* InfoPlist.strings */; };
 		6E1C704C1998BB9400B95440 /* faFaTuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C704B1998BB9400B95440 /* faFaTuanTests.m */; };
+		6E1C705A1998C04200B95440 /* LLGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C70591998C04200B95440 /* LLGuideViewController.m */; };
+		6E1C705D1998C34E00B95440 /* WFTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C705C1998C34E00B95440 /* WFTTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E1C40A21999B1F900298C2B /* LLBulkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkViewController.h; sourceTree = "<group>"; };
+		6E1C40A31999B1F900298C2B /* LLBulkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkViewController.m; sourceTree = "<group>"; };
+		6E1C40A51999B5CE00298C2B /* LLPPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPPViewController.h; sourceTree = "<group>"; };
+		6E1C40A61999B5CE00298C2B /* LLPPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPPViewController.m; sourceTree = "<group>"; };
+		6E1C40A71999B5CE00298C2B /* LLPPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLPPViewController.xib; sourceTree = "<group>"; };
 		6E1C701D1998BB9400B95440 /* faFaTuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faFaTuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C70201998BB9400B95440 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1C70221998BB9400B95440 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +54,16 @@
 		6E1C702F1998BB9400B95440 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
 		6E1C70301998BB9400B95440 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		6E1C70331998BB9400B95440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6E1C70351998BB9400B95440 /* LLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
-		6E1C70361998BB9400B95440 /* LLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLViewController.m; sourceTree = "<group>"; };
 		6E1C70381998BB9400B95440 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E1C703E1998BB9400B95440 /* faFaTuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = faFaTuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C703F1998BB9400B95440 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6E1C70471998BB9400B95440 /* faFaTuanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "faFaTuanTests-Info.plist"; sourceTree = "<group>"; };
 		6E1C70491998BB9400B95440 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E1C704B1998BB9400B95440 /* faFaTuanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = faFaTuanTests.m; sourceTree = "<group>"; };
+		6E1C70581998C04200B95440 /* LLGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGuideViewController.h; sourceTree = "<group>"; };
+		6E1C70591998C04200B95440 /* LLGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGuideViewController.m; sourceTree = "<group>"; };
+		6E1C705B1998C34E00B95440 /* WFTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFTTabBarViewController.h; sourceTree = "<group>"; };
+		6E1C705C1998C34E00B95440 /* WFTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFTTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E1C40A11999B1D100298C2B /* 团购 */ = {
+			isa = PBXGroup;
+			children = (
+				6E1C40A21999B1F900298C2B /* LLBulkViewController.h */,
+				6E1C40A31999B1F900298C2B /* LLBulkViewController.m */,
+				6E1C40A51999B5CE00298C2B /* LLPPViewController.h */,
+				6E1C40A61999B5CE00298C2B /* LLPPViewController.m */,
+				6E1C40A71999B5CE00298C2B /* LLPPViewController.xib */,
+			);
+			name = "团购";
+			sourceTree = "<group>";
+		};
 		6E1C70141998BB9400B95440 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +135,14 @@
 		6E1C70261998BB9400B95440 /* faFaTuan */ = {
 			isa = PBXGroup;
 			children = (
+				6E1C40A11999B1D100298C2B /* 团购 */,
 				6E1C702F1998BB9400B95440 /* LLAppDelegate.h */,
 				6E1C70301998BB9400B95440 /* LLAppDelegate.m */,
 				6E1C70321998BB9400B95440 /* Main.storyboard */,
-				6E1C70351998BB9400B95440 /* LLViewController.h */,
-				6E1C70361998BB9400B95440 /* LLViewController.m */,
+				6E1C70581998C04200B95440 /* LLGuideViewController.h */,
+				6E1C70591998C04200B95440 /* LLGuideViewController.m */,
+				6E1C705B1998C34E00B95440 /* WFTTabBarViewController.h */,
+				6E1C705C1998C34E00B95440 /* WFTTabBarViewController.m */,
 				6E1C70381998BB9400B95440 /* Images.xcassets */,
 				6E1C70271998BB9400B95440 /* Supporting Files */,
 			);
@@ -231,6 +257,7 @@
 			files = (
 				6E1C70391998BB9400B95440 /* Images.xcassets in Resources */,
 				6E1C702B1998BB9400B95440 /* InfoPlist.strings in Resources */,
+				6E1C40A91999B5CE00298C2B /* LLPPViewController.xib in Resources */,
 				6E1C70341998BB9400B95440 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1C705D1998C34E00B95440 /* WFTTabBarViewController.m in Sources */,
 				6E1C70311998BB9400B95440 /* LLAppDelegate.m in Sources */,
+				6E1C705A1998C04200B95440 /* LLGuideViewController.m in Sources */,
 				6E1C702D1998BB9400B95440 /* main.m in Sources */,
-				6E1C70371998BB9400B95440 /* LLViewController.m in Sources */,
+				6E1C40A81999B5CE00298C2B /* LLPPViewController.m in Sources */,
+				6E1C40A41999B1F900298C2B /* LLBulkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -366,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -457,6 +487,7 @@
 				6E1C70511998BB9400B95440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E1C70521998BB9400B95440 /* Build configuration list for PBXNativeTarget "faFaTuanTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +496,7 @@
 				6E1C70541998BB9400B95440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
