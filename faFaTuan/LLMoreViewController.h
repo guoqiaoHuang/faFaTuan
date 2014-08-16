@@ -1,5 +1,5 @@
 //
-//  LLPPViewController.h
+//  LLMoreViewController.h
 //  faFaTuan
 //
 //  Created by git on 14-8-12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LLPPViewController : UIViewController
+@interface LLMoreViewController : UIViewController
 
 @end

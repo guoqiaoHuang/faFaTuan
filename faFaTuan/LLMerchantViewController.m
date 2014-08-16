@@ -1,18 +1,18 @@
 //
-//  LLPPViewController.m
+//  LLMerchantViewController.m
 //  faFaTuan
 //
 //  Created by git on 14-8-12.
 //  Copyright (c) 2014年 fafaS. All rights reserved.
 //
 
-#import "LLPPViewController.h"
+#import "LLMerchantViewController.h"
 
-@interface LLPPViewController ()
+@interface LLMerchantViewController ()
 
 @end
 
-@implementation LLPPViewController
+@implementation LLMerchantViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
+    [HCNavigationAndStatusBarTool setNavigationBackground:self];
+
 }
 
 - (void)didReceiveMemoryWarning

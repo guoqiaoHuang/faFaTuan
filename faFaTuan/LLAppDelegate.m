@@ -13,6 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    if (IOS7_OR_LATER) {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
     return YES;
 }
 							

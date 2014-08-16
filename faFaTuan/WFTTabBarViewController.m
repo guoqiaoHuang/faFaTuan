@@ -42,19 +42,21 @@
     itemPicker =@[@"icon_tabbar_homepage",@"icon_tabbar_merchant_normal",@"icon_tabbar_mine",@"icon_tabbar_misc"];
     itemPickerSelected =@[@"icon_tabbar_homepage_selected",@"icon_tabbar_merchant_selected"
                           ,@"icon_tabbar_mine_selected",@"icon_tabbar_misc_selected"];
-    
+    //将自定义的view 覆盖到TabBar之上
     myTabBar = [[UIView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, TabBarHeight)];
     [myTabBar setBackgroundColor:[UIColor whiteColor]];
     for (int i=0; i<TabBarNumber; i++) {
+        //在TabBar 上加透明的btn
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i*TabBarWidth,0,TabBarWidth, TabBarHeight)];
         [btn addTarget:self action:@selector(clickTabBar:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i+TagM];
-        
+        //图标 btn
         UIButton *imgBtn =[[UIButton alloc]initWithFrame:CGRectMake(btn.frame.origin.x, btn.frame.origin.y, btn.frame.size.width, btn.frame.size.height*2.0/3.0)];
         [imgBtn setImage:[UIImage imageNamed:itemPicker[i]] forState:UIControlStateNormal];
         [imgBtn setImage:[UIImage imageNamed:itemPickerSelected[i]] forState:UIControlStateSelected];
         [imgBtn setTag:i+TagM+TagD];
         
+        //文字 btn
         UIButton *lableBtn =[[UIButton alloc]initWithFrame:CGRectMake(btn.frame.origin.x, imgBtn.frame.origin.y+imgBtn.frame.size.height,  btn.frame.size.width, btn.frame.size.height*1.0/3.0)];
         [lableBtn setTitle:itemNames[i] forState:UIControlStateNormal];
         [lableBtn setTitle:itemNames[i] forState:UIControlStateSelected];
@@ -94,7 +96,3 @@
 }
 @end
 
-
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//}

@@ -13,4 +13,20 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "HCNavigationAndStatusBarTool.h"
+    #import "UIView+Coordinate.h"
+    #import "UILabel+extend.h"
+    #import "UIImageView+extend.h"
+    #import "LLASIHelp.h"
+    #import "NSString+extend.h"
+
+
+
+    #define IOS7_OR_LATER   ([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending)
+    #define TABBAR_HEIGHT   46
+    #define BASE_URL    @"http://api.xiaogan88.com"
+    #define URL(_ADD_) [BASE_URL stringByAppendingString:_ADD_]
+    //提示框
+    #define SHOW(_message_)   [[[UIAlertView alloc]initWithTitle:@"提示" message:_message_ delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil,nil] show]
+
 #endif

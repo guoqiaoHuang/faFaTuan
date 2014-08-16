@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LLBulkViewController : UIViewController
+#import "LLBulkTableViewCell.h"
+@interface LLBulkViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @end
