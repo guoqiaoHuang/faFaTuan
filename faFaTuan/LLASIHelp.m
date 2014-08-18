@@ -9,6 +9,7 @@
 #import "LLASIHelp.h"
 #import "NSString+SBJSON.h"
 #import "Reachability.h"
+#import "ASIDownloadCache.h"
 #define API_URL_MAKE(_string_) [NSURL URLWithString:_string_]
 
 @implementation LLASIHelp
@@ -49,10 +50,15 @@
             acancelBlock();
         }
     }];
+    [request setDownloadCache:[ASIDownloadCache sharedCache]];
+    [request setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
+    [request setCachePolicy:ASIFallbackToCacheIfLoadFailsCachePolicy];
+    [request setSecondsToCache:60*60*24*7];
     [request setTimeOutSeconds:60];
     [request setValidatesSecureCertificate:NO];
     [request startAsynchronous];
     
     return request;
 }
+//    [[ASIDownloadCache sharedCache]clearCachedResponsesForStoragePolicy:ASICachePermanentlyCacheStoragePolicy];  清空缓存
 @end

@@ -29,7 +29,11 @@
 		6E1C704C1998BB9400B95440 /* faFaTuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C704B1998BB9400B95440 /* faFaTuanTests.m */; };
 		6E1C705A1998C04200B95440 /* LLGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C70591998C04200B95440 /* LLGuideViewController.m */; };
 		6E1C705D1998C34E00B95440 /* WFTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C705C1998C34E00B95440 /* WFTTabBarViewController.m */; };
-		6E1D3677199F08E90001F47D /* LLLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D3676199F08E90001F47D /* LLLine.m */; };
+		6E1D367D199F22C30001F47D /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D367A199F22C30001F47D /* FileHelpers.m */; };
+		6E1D367E199F22C30001F47D /* ImageCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D367C199F22C30001F47D /* ImageCacher.m */; };
+		6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D485219A1C7EE002775A8 /* LLPriceView.m */; };
+		6E2C1DA919A04067007A0E24 /* UIButton+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DA819A04067007A0E24 /* UIButton+extend.m */; };
+		6E2C1DBD19A048BD007A0E24 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */; };
 		6E519C6E199C477E00EE418E /* UIImageView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C6D199C477E00EE418E /* UIImageView+extend.m */; };
 		6E519C72199C590900EE418E /* LLBulkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C71199C590900EE418E /* LLBulkTableViewCell.m */; };
 		6E519C75199C605300EE418E /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C74199C605300EE418E /* NSString+extend.m */; };
@@ -103,8 +107,16 @@
 		6E1C70591998C04200B95440 /* LLGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGuideViewController.m; sourceTree = "<group>"; };
 		6E1C705B1998C34E00B95440 /* WFTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFTTabBarViewController.h; sourceTree = "<group>"; };
 		6E1C705C1998C34E00B95440 /* WFTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFTTabBarViewController.m; sourceTree = "<group>"; };
-		6E1D3675199F08E90001F47D /* LLLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLine.h; sourceTree = "<group>"; };
-		6E1D3676199F08E90001F47D /* LLLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLine.m; sourceTree = "<group>"; };
+		6E1D3679199F22C30001F47D /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
+		6E1D367A199F22C30001F47D /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
+		6E1D367B199F22C30001F47D /* ImageCacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacher.h; sourceTree = "<group>"; };
+		6E1D367C199F22C30001F47D /* ImageCacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacher.m; sourceTree = "<group>"; };
+		6E1D485119A1C7EE002775A8 /* LLPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPriceView.h; sourceTree = "<group>"; };
+		6E1D485219A1C7EE002775A8 /* LLPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPriceView.m; sourceTree = "<group>"; };
+		6E2C1DA719A04067007A0E24 /* UIButton+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+extend.h"; sourceTree = "<group>"; };
+		6E2C1DA819A04067007A0E24 /* UIButton+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+extend.m"; sourceTree = "<group>"; };
+		6E2C1DB319A048BD007A0E24 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		6E519C6C199C477E00EE418E /* UIImageView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+extend.h"; sourceTree = "<group>"; };
 		6E519C6D199C477E00EE418E /* UIImageView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+extend.m"; sourceTree = "<group>"; };
 		6E519C70199C590900EE418E /* LLBulkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkTableViewCell.h; sourceTree = "<group>"; };
@@ -213,6 +225,8 @@
 		6E1C40AB1999B8B600298C2B /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				6E2C1DAA19A048A3007A0E24 /* 下拉刷新 */,
+				6E1D3678199F22AB0001F47D /* 图片缓存 */,
 				6E519C77199C644700EE418E /* 网络请求 */,
 				6E519C76199C643900EE418E /* 导航栏 */,
 				6E1C40BE1999C12D00298C2B /* 扩展函数 */,
@@ -250,6 +264,8 @@
 		6E1C40BE1999C12D00298C2B /* 扩展函数 */ = {
 			isa = PBXGroup;
 			children = (
+				6E2C1DA719A04067007A0E24 /* UIButton+extend.h */,
+				6E2C1DA819A04067007A0E24 /* UIButton+extend.m */,
 				6E519C73199C605300EE418E /* NSString+extend.h */,
 				6E519C74199C605300EE418E /* NSString+extend.m */,
 				6E519C6C199C477E00EE418E /* UIImageView+extend.h */,
@@ -341,13 +357,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6E1D3678199F22AB0001F47D /* 图片缓存 */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D3679199F22C30001F47D /* FileHelpers.h */,
+				6E1D367A199F22C30001F47D /* FileHelpers.m */,
+				6E1D367B199F22C30001F47D /* ImageCacher.h */,
+				6E1D367C199F22C30001F47D /* ImageCacher.m */,
+			);
+			name = "图片缓存";
+			sourceTree = "<group>";
+		};
+		6E2C1DAA19A048A3007A0E24 /* 下拉刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				6E2C1DB319A048BD007A0E24 /* EGORefreshTableHeaderView.h */,
+				6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */,
+			);
+			name = "下拉刷新";
+			sourceTree = "<group>";
+		};
 		6E519C6F199C581400EE418E /* 团购cell */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D3675199F08E90001F47D /* LLLine.h */,
-				6E1D3676199F08E90001F47D /* LLLine.m */,
 				6E519C70199C590900EE418E /* LLBulkTableViewCell.h */,
 				6E519C71199C590900EE418E /* LLBulkTableViewCell.m */,
+				6E1D485119A1C7EE002775A8 /* LLPriceView.h */,
+				6E1D485219A1C7EE002775A8 /* LLPriceView.m */,
 			);
 			name = "团购cell";
 			sourceTree = "<group>";
@@ -521,10 +557,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2C1DBD19A048BD007A0E24 /* EGORefreshTableHeaderView.m in Sources */,
 				6E1C705D1998C34E00B95440 /* WFTTabBarViewController.m in Sources */,
 				6E519C8B199C654300EE418E /* SBJsonWriter.m in Sources */,
 				6E1C40B41999BDF000298C2B /* LLMerchantViewController.m in Sources */,
-				6E1D3677199F08E90001F47D /* LLLine.m in Sources */,
 				6E519C6E199C477E00EE418E /* UIImageView+extend.m in Sources */,
 				6E519CB5199C664500EE418E /* LLASIHelp.m in Sources */,
 				6E519CAF199C65EA00EE418E /* Reachability.m in Sources */,
@@ -544,13 +580,17 @@
 				6E519CA6199C65CF00EE418E /* ASIInputStream.m in Sources */,
 				6E519C86199C654300EE418E /* NSObject+SBJSON.m in Sources */,
 				6E1C40BA1999BE1200298C2B /* LLMoreViewController.m in Sources */,
+				6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */,
 				6E519CA8199C65CF00EE418E /* ASIHTTPRequest.m in Sources */,
 				6E519C88199C654300EE418E /* SBJSON.m in Sources */,
 				6E1C702D1998BB9400B95440 /* main.m in Sources */,
 				6E519CA7199C65CF00EE418E /* ASIFormDataRequest.m in Sources */,
+				6E1D367E199F22C30001F47D /* ImageCacher.m in Sources */,
 				6E519C72199C590900EE418E /* LLBulkTableViewCell.m in Sources */,
+				6E2C1DA919A04067007A0E24 /* UIButton+extend.m in Sources */,
 				6E519C87199C654300EE418E /* NSString+SBJSON.m in Sources */,
 				6E519CAB199C65CF00EE418E /* ASIDataDecompressor.m in Sources */,
+				6E1D367D199F22C30001F47D /* FileHelpers.m in Sources */,
 				6E1C40A41999B1F900298C2B /* LLBulkViewController.m in Sources */,
 				6E519CA5199C65CF00EE418E /* ASIAuthenticationDialog.m in Sources */,
 			);

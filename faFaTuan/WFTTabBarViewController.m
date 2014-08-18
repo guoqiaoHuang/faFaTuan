@@ -42,11 +42,19 @@
     itemPicker =@[@"icon_tabbar_homepage",@"icon_tabbar_merchant_normal",@"icon_tabbar_mine",@"icon_tabbar_misc"];
     itemPickerSelected =@[@"icon_tabbar_homepage_selected",@"icon_tabbar_merchant_selected"
                           ,@"icon_tabbar_mine_selected",@"icon_tabbar_misc_selected"];
+    [self setMyTabBar];
+}
+/**
+ * 功能：添加自定义的tabbar
+ * 前置条件：必须在 UITabBarController的子类上
+ */
+-(void)setMyTabBar
+{
     //将自定义的view 覆盖到TabBar之上
     myTabBar = [[UIView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, TabBarHeight)];
     [myTabBar setBackgroundColor:[UIColor whiteColor]];
     for (int i=0; i<TabBarNumber; i++) {
-        //在TabBar 上加透明的btn
+        //覆盖在TabBar 上加透明的btn
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i*TabBarWidth,0,TabBarWidth, TabBarHeight)];
         [btn addTarget:self action:@selector(clickTabBar:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i+TagM];
@@ -63,7 +71,7 @@
         
         [lableBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [lableBtn setTitleColor:[UIColor colorWithRed:47.0/255 green:172.0/255 blue:160.0/255 alpha:1.0] forState:UIControlStateSelected];
-
+        
         lableBtn.titleLabel.font =[UIFont systemFontOfSize:10];
         [lableBtn setTag:i+TagM+TagD*2];
         
@@ -74,8 +82,11 @@
     [((UIButton *)[myTabBar viewWithTag:TagM+TagD]) setSelected:YES];
     [((UIButton *)[myTabBar viewWithTag:TagM+TagD*2]) setSelected:YES];
     [self.tabBar addSubview:myTabBar ];
-
 }
+/**
+ * 功能：点击覆盖button的的响应函数
+ * 根据覆盖button的tag   设置图片文字button的状态
+ */
 -(void)clickTabBar:(UIButton *)sender
 {
     for (int i=0; i<TabBarNumber; i++) {

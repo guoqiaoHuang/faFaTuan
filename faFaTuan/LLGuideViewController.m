@@ -29,8 +29,6 @@
     // Do any additional setup after loading the view.
     if (1==[[[NSUserDefaults standardUserDefaults]objectForKey:@"guide"]intValue]) {
         [self performSegueWithIdentifier:@"guide" sender:self];
-    }else{
-        [_startButton setHidden:NO];
     }
 }
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "LLBulkTableViewCell.h"
-@interface LLBulkViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
+#import "EGORefreshTableHeaderView.h"
+@interface LLBulkViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate>{
+    EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL _reloading;
+}
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @end

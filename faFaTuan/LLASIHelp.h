@@ -11,6 +11,7 @@ typedef void(^cancelBlock)(void);
 #import "ASIFormDataRequest.h"
 @interface LLASIHelp : NSObject
 /**
+    网络请求（自动缓存）
     url   网址
     params 键值对
     block  结果回调

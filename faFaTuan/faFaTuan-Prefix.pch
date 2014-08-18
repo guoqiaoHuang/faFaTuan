@@ -19,6 +19,7 @@
     #import "UIImageView+extend.h"
     #import "LLASIHelp.h"
     #import "NSString+extend.h"
+    #import "UIButton+extend.h"
 
 
 
@@ -26,6 +27,7 @@
     #define TABBAR_HEIGHT   46
     #define BASE_URL    @"http://api.xiaogan88.com"
     #define URL(_ADD_) [BASE_URL stringByAppendingString:_ADD_]
+    #define IMG_URL @"http://img.xiaogan88.com/deal/82.50/"
     //提示框
     #define SHOW(_message_)   [[[UIAlertView alloc]initWithTitle:@"提示" message:_message_ delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil,nil] show]
 

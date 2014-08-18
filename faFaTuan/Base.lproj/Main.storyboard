@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z1k-bl-DAG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z1k-bl-DAG">
                                 <rect key="frame" x="122" y="129" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="开始">
@@ -79,7 +79,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="UVg-YS-rWC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="QSZ-6f-A1S"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E6N-6K-OtW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="E6N-6K-OtW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -95,7 +95,7 @@
             <objects>
                 <viewController id="POO-8C-x9I" customClass="LLMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ucb-cE-rLi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="e2a-Jc-yGd">
@@ -116,7 +116,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="n5Z-o3-6Yk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9YD-vX-qDO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BXg-xu-bvr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BXg-xu-bvr">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -132,7 +132,7 @@
             <objects>
                 <viewController id="hfg-Nq-mGm" customClass="LLMyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nuc-h1-cZI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M5U-n4-AOX">
@@ -156,7 +156,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="hYV-tD-Zve" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="nzX-Rd-6f9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="05G-dE-dKp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="05G-dE-dKp">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -172,7 +172,7 @@
             <objects>
                 <viewController id="bLy-zx-jAN" customClass="LLMerchantViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoK-96-XoV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Yhq-8H-5hc">
@@ -197,7 +197,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="x5u-Ab-mwU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Aev-T8-hN8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ANy-92-3GY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ANy-92-3GY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -213,16 +213,16 @@
             <objects>
                 <viewController id="4v7-lN-C1o" customClass="LLBulkViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOt-h8-zGQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" id="wGT-lQ-uTk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wGT-lQ-uTk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BulkCell" rowHeight="90" id="EHY-MZ-01u" customClass="LLBulkTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EHY-MZ-01u" id="DNp-wZ-emn">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
@@ -246,26 +246,6 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xES-BM-hwB">
-                                                    <rect key="frame" x="100" y="63" width="10" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.12941177189350128" green="0.75294125080108643" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NhW-ff-d8W">
-                                                    <rect key="frame" x="108" y="63" width="17" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MDK-WL-BKm">
-                                                    <rect key="frame" x="128" y="63" width="27" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.81048332093253972" green="0.80595548115079363" blue="0.8150111607142857" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已售230012" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OB6-Dh-EnO">
                                                     <rect key="frame" x="217" y="63" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -273,16 +253,50 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" id="w3q-YE-bSy" customClass="LLLine">
-                                                    <rect key="frame" x="163" y="61" width="55" height="26"/>
+                                                <view contentMode="scaleToFill" id="gno-Gn-NCh" customClass="LLPriceView">
+                                                    <rect key="frame" x="100" y="62" width="137" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0元" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MDK-WL-BKm">
+                                                            <rect key="frame" x="39" y="6" width="27" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="0.81048332093253972" green="0.80595548115079363" blue="0.8150111607142857" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xES-BM-hwB">
+                                                            <rect key="frame" x="2" y="3" width="10" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.12941177189350128" green="0.75294125080108643" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NhW-ff-d8W">
+                                                            <rect key="frame" x="19" y="1" width="17" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <outlet property="originaPrice" destination="MDK-WL-BKm" id="rtE-l0-pqd"/>
+                                                        <outlet property="price" destination="xES-BM-hwB" id="fcG-7G-F8K"/>
+                                                        <outlet property="priceUnit" destination="NhW-ff-d8W" id="FUF-eT-bdX"/>
+                                                    </connections>
                                                 </view>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MYf-bQ-vXa">
+                                                    <rect key="frame" x="306" y="0.0" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="haveSales" destination="OB6-Dh-EnO" id="fFB-Kx-Ued"/>
-                                            <outlet property="lineView" destination="w3q-YE-bSy" id="jSs-Ud-zfs"/>
+                                            <outlet property="imageMark" destination="MYf-bQ-vXa" id="Cf9-hQ-RuY"/>
                                             <outlet property="originaPrice" destination="MDK-WL-BKm" id="sac-um-dTo"/>
                                             <outlet property="price" destination="xES-BM-hwB" id="1eH-lO-9RG"/>
                                             <outlet property="priceUnit" destination="NhW-ff-d8W" id="aCJ-Fp-sEt"/>
@@ -307,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDr-Fg-0nM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="74"/>
+            <point key="canvasLocation" x="1416" y="74"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
