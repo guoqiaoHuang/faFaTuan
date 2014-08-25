@@ -47,11 +47,14 @@
 #pragma mark 自定义返回按钮
 
 +(void)customLeftBackButton:(UIViewController *)selfs sel:(SEL)popself{
-    UIImage *image=[UIImage imageNamed:@"btn_title_big_normal"];
+    UIImage *image=[UIImage imageNamed:@"btn_backItem"];
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(0, 0, image.size.width*1.3, image.size.height*1.3);
+    btn.frame=CGRectMake(0, 0, image.size.width, image.size.height);
+    
     [btn setBackgroundImage:image forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"btn_backItem_highlighted"] forState:UIControlStateHighlighted];
     [btn addTarget:selfs action:popself  forControlEvents:UIControlEventTouchUpInside];
+    
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     selfs.navigationItem.leftBarButtonItem =backItem;
 }

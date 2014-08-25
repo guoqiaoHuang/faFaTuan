@@ -32,8 +32,13 @@ NSString *pathInCacheDirectory(NSString *fileName){
 
 //根据URL的hash码为文件命名
 NSString *pathForURL(NSURL *aURL){
-     NSString *fileNmae= [[[aURL description]  componentsSeparatedByString:@"/"] lastObject];
-    return pathInCacheDirectory([NSString stringWithFormat:@"cachedFile-%@",fileNmae]);
+    NSArray *ary =[[aURL description]  componentsSeparatedByString:@"/"];
+    NSString *fileNmae= [ary lastObject];
+    NSString *fileName=@"";
+    if ([ary count]>2) {
+        fileName=ary[[ary count]-2];
+    }
+    return pathInCacheDirectory([NSString stringWithFormat:@"cachedFile-%@%@",fileName,fileNmae]);
 }
 
 //判断是否已经缓存过这个URL

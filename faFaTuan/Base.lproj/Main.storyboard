@@ -300,6 +300,7 @@
                                             <outlet property="originaPrice" destination="MDK-WL-BKm" id="sac-um-dTo"/>
                                             <outlet property="price" destination="xES-BM-hwB" id="1eH-lO-9RG"/>
                                             <outlet property="priceUnit" destination="NhW-ff-d8W" id="aCJ-Fp-sEt"/>
+                                            <outlet property="priceViews" destination="gno-Gn-NCh" id="I6x-tW-E7G"/>
                                             <outlet property="productDescribe" destination="Z2l-VQ-OiI" id="fvB-Ur-0fZ"/>
                                             <outlet property="productImage" destination="MqT-8z-EqP" id="O5D-Xx-MSR"/>
                                             <outlet property="productTitle" destination="NVF-xb-dZx" id="Tcw-XO-h5H"/>

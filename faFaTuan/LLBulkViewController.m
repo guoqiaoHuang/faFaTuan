@@ -8,6 +8,8 @@
 #import "LLBulkViewController.h"
 #import "ImageCacher.h"
 #import "FileHelpers.h"
+#import "LLBulkDetailViewController.h"
+
 #define HEADER_COUNT 8
 
 
@@ -98,14 +100,23 @@
         [lab setTextAlignment:NSTextAlignmentCenter];
     }
     [allView addSubview:views];
+    
     //分割线以下的view
     UIView *view =[[UIView alloc]initWithFrame:CGRectMake(0,self.view.W/2, self.view.W, 50)];
-    [view setBackgroundColor:[UIColor whiteColor]];
     UIView *linesView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.W, 10)];
     [linesView setBackgroundColor:[UIColor colorWithRed:235.0/255 green:235.0/255 blue:241.0/255 alpha:1]];
     [view addSubview:linesView];
     [UILabel allocInitWith:CGRectMake(10,10, self.view.W-10,40) title:@"猜你喜欢" font:16 color:[UIColor blackColor] view:view];
     [allView addSubview:view];
+
+    //设置边框线
+    UIEdgeInsets edImage = {1.0f,1.0f,1.0f,1.0f};
+    UIImageView *edImageView =[[UIImageView alloc]initWithFrame:allView.frame];
+    UIImage *imgs =[UIImage imageNamed:@"cell_middle"];
+    imgs = [imgs resizableImageWithCapInsets:edImage];
+    [edImageView setImage:imgs];
+    [edImageView setContentMode:UIViewContentModeScaleToFill];
+    [allView  insertSubview:edImageView atIndex:0];
 
     _myTableView.tableHeaderView=allView;
 }
@@ -155,6 +166,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LLBulkDetailViewController *bulkDetail =[[LLBulkDetailViewController alloc]init];
+    bulkDetail.bulkDic =dataAry[indexPath.row];
+    bulkDetail.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:bulkDetail animated:YES];
 }
 #pragma mark -
 #pragma mark 下拉刷新

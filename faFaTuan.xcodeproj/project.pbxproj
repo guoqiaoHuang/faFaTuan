@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E16EB8F19A9971A00B1A3F9 /* LLOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */; };
+		6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */; };
 		6E1C40A41999B1F900298C2B /* LLBulkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40A31999B1F900298C2B /* LLBulkViewController.m */; };
 		6E1C40AE1999B8CF00298C2B /* HCNavigationAndStatusBarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40AD1999B8CF00298C2B /* HCNavigationAndStatusBarTool.m */; };
 		6E1C40B41999BDF000298C2B /* LLMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40B31999BDF000298C2B /* LLMerchantViewController.m */; };
@@ -32,8 +34,13 @@
 		6E1D367D199F22C30001F47D /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D367A199F22C30001F47D /* FileHelpers.m */; };
 		6E1D367E199F22C30001F47D /* ImageCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D367C199F22C30001F47D /* ImageCacher.m */; };
 		6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D485219A1C7EE002775A8 /* LLPriceView.m */; };
+		6E1D485919A1D4B7002775A8 /* LLBulkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D485719A1D4B7002775A8 /* LLBulkDetailViewController.xib */; };
+		6E20C0AF19AACEA100DB03C9 /* LLBulkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20C0AE19AACEA100DB03C9 /* LLBulkDetailViewController.m */; };
+		6E2B2D6B19A46E2000E621D7 /* LLBulkDetailSectionPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */; };
 		6E2C1DA919A04067007A0E24 /* UIButton+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DA819A04067007A0E24 /* UIButton+extend.m */; };
 		6E2C1DBD19A048BD007A0E24 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */; };
+		6E2D43ED19A344E200246AEB /* LLBulkDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2D43EB19A344E200246AEB /* LLBulkDetailTableViewCell.m */; };
+		6E2D43EE19A344E200246AEB /* LLBulkDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2D43EC19A344E200246AEB /* LLBulkDetailTableViewCell.xib */; };
 		6E519C6E199C477E00EE418E /* UIImageView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C6D199C477E00EE418E /* UIImageView+extend.m */; };
 		6E519C72199C590900EE418E /* LLBulkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C71199C590900EE418E /* LLBulkTableViewCell.m */; };
 		6E519C75199C605300EE418E /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E519C74199C605300EE418E /* NSString+extend.m */; };
@@ -72,6 +79,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E16EB8C19A9971A00B1A3F9 /* LLOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLOrderDetailsViewController.h; sourceTree = "<group>"; };
+		6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLOrderDetailsViewController.m; sourceTree = "<group>"; };
+		6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLOrderDetailsViewController.xib; sourceTree = "<group>"; };
 		6E1C40A21999B1F900298C2B /* LLBulkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkViewController.h; sourceTree = "<group>"; };
 		6E1C40A31999B1F900298C2B /* LLBulkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkViewController.m; sourceTree = "<group>"; };
 		6E1C40AC1999B8CF00298C2B /* HCNavigationAndStatusBarTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNavigationAndStatusBarTool.h; sourceTree = "<group>"; };
@@ -113,10 +123,18 @@
 		6E1D367C199F22C30001F47D /* ImageCacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacher.m; sourceTree = "<group>"; };
 		6E1D485119A1C7EE002775A8 /* LLPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPriceView.h; sourceTree = "<group>"; };
 		6E1D485219A1C7EE002775A8 /* LLPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPriceView.m; sourceTree = "<group>"; };
+		6E1D485519A1D4B7002775A8 /* LLBulkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkDetailViewController.h; sourceTree = "<group>"; };
+		6E1D485719A1D4B7002775A8 /* LLBulkDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBulkDetailViewController.xib; sourceTree = "<group>"; };
+		6E20C0AE19AACEA100DB03C9 /* LLBulkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkDetailViewController.m; sourceTree = "<group>"; };
+		6E2B2D6919A46E2000E621D7 /* LLBulkDetailSectionPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkDetailSectionPrice.h; sourceTree = "<group>"; };
+		6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkDetailSectionPrice.m; sourceTree = "<group>"; };
 		6E2C1DA719A04067007A0E24 /* UIButton+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+extend.h"; sourceTree = "<group>"; };
 		6E2C1DA819A04067007A0E24 /* UIButton+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+extend.m"; sourceTree = "<group>"; };
 		6E2C1DB319A048BD007A0E24 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		6E2D43EA19A344E200246AEB /* LLBulkDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkDetailTableViewCell.h; sourceTree = "<group>"; };
+		6E2D43EB19A344E200246AEB /* LLBulkDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkDetailTableViewCell.m; sourceTree = "<group>"; };
+		6E2D43EC19A344E200246AEB /* LLBulkDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBulkDetailTableViewCell.xib; sourceTree = "<group>"; };
 		6E519C6C199C477E00EE418E /* UIImageView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+extend.h"; sourceTree = "<group>"; };
 		6E519C6D199C477E00EE418E /* UIImageView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+extend.m"; sourceTree = "<group>"; };
 		6E519C70199C590900EE418E /* LLBulkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkTableViewCell.h; sourceTree = "<group>"; };
@@ -201,6 +219,7 @@
 		6E1C40A11999B1D100298C2B /* 团购 */ = {
 			isa = PBXGroup;
 			children = (
+				6E1D485419A1D420002775A8 /* 团购详情 */,
 				6E519C6F199C581400EE418E /* 团购cell */,
 				6E1C40A21999B1F900298C2B /* LLBulkViewController.h */,
 				6E1C40A31999B1F900298C2B /* LLBulkViewController.m */,
@@ -366,6 +385,32 @@
 				6E1D367C199F22C30001F47D /* ImageCacher.m */,
 			);
 			name = "图片缓存";
+			sourceTree = "<group>";
+		};
+		6E1D485419A1D420002775A8 /* 团购详情 */ = {
+			isa = PBXGroup;
+			children = (
+				6E2B2D6C19A4753600E621D7 /* view */,
+				6E1D485519A1D4B7002775A8 /* LLBulkDetailViewController.h */,
+				6E20C0AE19AACEA100DB03C9 /* LLBulkDetailViewController.m */,
+				6E1D485719A1D4B7002775A8 /* LLBulkDetailViewController.xib */,
+			);
+			name = "团购详情";
+			sourceTree = "<group>";
+		};
+		6E2B2D6C19A4753600E621D7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6E2D43EA19A344E200246AEB /* LLBulkDetailTableViewCell.h */,
+				6E2D43EB19A344E200246AEB /* LLBulkDetailTableViewCell.m */,
+				6E2D43EC19A344E200246AEB /* LLBulkDetailTableViewCell.xib */,
+				6E16EB8C19A9971A00B1A3F9 /* LLOrderDetailsViewController.h */,
+				6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */,
+				6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */,
+				6E2B2D6919A46E2000E621D7 /* LLBulkDetailSectionPrice.h */,
+				6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		6E2C1DAA19A048A3007A0E24 /* 下拉刷新 */ = {
@@ -537,8 +582,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E1C70391998BB9400B95440 /* Images.xcassets in Resources */,
+				6E2D43EE19A344E200246AEB /* LLBulkDetailTableViewCell.xib in Resources */,
 				6E1C702B1998BB9400B95440 /* InfoPlist.strings in Resources */,
 				6E1C70341998BB9400B95440 /* Main.storyboard in Resources */,
+				6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */,
+				6E1D485919A1D4B7002775A8 /* LLBulkDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,9 +611,12 @@
 				6E1C40B41999BDF000298C2B /* LLMerchantViewController.m in Sources */,
 				6E519C6E199C477E00EE418E /* UIImageView+extend.m in Sources */,
 				6E519CB5199C664500EE418E /* LLASIHelp.m in Sources */,
+				6E2D43ED19A344E200246AEB /* LLBulkDetailTableViewCell.m in Sources */,
 				6E519CAF199C65EA00EE418E /* Reachability.m in Sources */,
 				6E1C70311998BB9400B95440 /* LLAppDelegate.m in Sources */,
 				6E519CB2199C65F300EE418E /* ASIWebPageRequest.m in Sources */,
+				6E16EB8F19A9971A00B1A3F9 /* LLOrderDetailsViewController.m in Sources */,
+				6E20C0AF19AACEA100DB03C9 /* LLBulkDetailViewController.m in Sources */,
 				6E519CAC199C65CF00EE418E /* ASIDataCompressor.m in Sources */,
 				6E519CAA199C65CF00EE418E /* ASIDownloadCache.m in Sources */,
 				6E1C705A1998C04200B95440 /* LLGuideViewController.m in Sources */,
@@ -588,6 +639,7 @@
 				6E1D367E199F22C30001F47D /* ImageCacher.m in Sources */,
 				6E519C72199C590900EE418E /* LLBulkTableViewCell.m in Sources */,
 				6E2C1DA919A04067007A0E24 /* UIButton+extend.m in Sources */,
+				6E2B2D6B19A46E2000E621D7 /* LLBulkDetailSectionPrice.m in Sources */,
 				6E519C87199C654300EE418E /* NSString+SBJSON.m in Sources */,
 				6E519CAB199C65CF00EE418E /* ASIDataDecompressor.m in Sources */,
 				6E1D367D199F22C30001F47D /* FileHelpers.m in Sources */,
