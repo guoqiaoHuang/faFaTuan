@@ -77,7 +77,7 @@ static ImageCacher *defaultCacher=nil;
     if (smallData) {
         BOOL flag =  [fileManager createFileAtPath:path contents:smallData attributes:nil];
         if(flag){
-            NSLog(@"cache success path is:%@,",path);
+//            NSLog(@"cache success path is:%@,",path);
         }
     }
     

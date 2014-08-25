@@ -20,6 +20,10 @@
 //提取字符串中的URL
 +(NSMutableArray *)getUrls:(NSString *)urlString
 {
+    if (urlString==nil){
+        return nil;
+    }
+
     NSMutableArray *ary = [[NSMutableArray alloc]init];
     NSError *error;
     NSString *regulaStr = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";

@@ -59,6 +59,20 @@
                         <action selector="viewImages:" destination="-1" eventType="touchUpInside" id="OrC-BB-30C"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" id="Mv5-st-txO">
+                    <rect key="frame" x="0.0" y="150" width="320" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击查看相册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBl-l0-HVK">
+                            <rect key="frame" x="114" y="3" width="92" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.94117653369903564" green="0.93725496530532837" blue="0.92941182851791382" alpha="1" colorSpace="deviceRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -75,8 +89,8 @@
                         <outlet property="delegate" destination="-1" id="jvF-sT-ahi"/>
                     </connections>
                 </scrollView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hw6-uf-QCD">
-                    <rect key="frame" x="139" y="274" width="42" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hw6-uf-QCD">
+                    <rect key="frame" x="130" y="274" width="60" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +112,7 @@
         </view>
         <tapGestureRecognizer id="59G-yk-dQf">
             <connections>
-                <action selector="hideViewImage:" destination="-1" id="kTS-bP-1hY"/>
+                <action selector="hideImageView:" destination="-1" id="Ox6-c2-PbZ"/>
                 <outlet property="delegate" destination="-1" id="jnK-Mk-UhZ"/>
             </connections>
         </tapGestureRecognizer>
