@@ -210,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_top" id="LdK-tZ-9jL">
-                                <rect key="frame" x="-5" y="0.0" width="305" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.34999999999999998" y="0.34999999999999998" width="0.44999999999999962" height="0.44999999999999962"/>
                             </imageView>
@@ -275,9 +275,9 @@
                         <rect key="contentStretch" x="0.29999999999999999" y="0.29999999999999999" width="0.59999999999999964" height="0.59999999999999964"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.94117653369903564" green="0.93725496530532837" blue="0.92941182851791382" alpha="1" colorSpace="deviceRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.96078437566757202" green="0.96078437566757202" blue="0.96078437566757202" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="drawback" destination="R2R-T7-s3l" id="bIE-Su-KK6"/>
                 <outlet property="drawbackImg" destination="eGr-24-DCi" id="0rS-Ce-LhU"/>

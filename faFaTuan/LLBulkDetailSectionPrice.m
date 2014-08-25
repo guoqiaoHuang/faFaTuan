@@ -61,5 +61,4 @@
     CGContextAddLineToPoint(context,view.X+view.W,view.Y+view.H/2);
     CGContextStrokePath(context);
 }
-
 @end

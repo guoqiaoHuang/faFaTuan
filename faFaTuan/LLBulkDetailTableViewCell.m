@@ -52,6 +52,9 @@
 {
     [_package sizeToFit];
     [_purchase sizeToFit];
+    [self banScrool:_package];
+    [self banScrool:_purchase];
+
     
     [_packageTopView setFrame:CGRectMake(_packageTopView.X, _packageTopView.Y, _packageTopView.W, _package.endY+2)];
     [_packageImage setFrame:_package.frame];
@@ -60,5 +63,14 @@
     [_purchaseImage setFrame:_purchase.frame];
     
     [self setFrame:CGRectMake(self.X, self.Y, self.W, _purchaseTopView.endY+10)];
+}
+-(void)banScrool:(UIWebView *)web
+{
+    UIScrollView *scroller = [web.subviews objectAtIndex:0];
+    if (scroller){
+        scroller.bounces = NO;
+        scroller.alwaysBounceVertical = NO;
+        scroller.alwaysBounceHorizontal = NO;
+    }
 }
 @end

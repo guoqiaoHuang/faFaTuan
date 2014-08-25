@@ -13,6 +13,7 @@
 @interface LLBulkDetailViewController (){
     NSDictionary *allData;
     NSArray *imgAry;
+    float cellHeight;
 }
 
 @end
@@ -34,6 +35,7 @@
     // Do any additional setup after loading the view.
     [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:@"团购详情"];
     [HCNavigationAndStatusBarTool customLeftBackButton:self sel:@selector(goBack)];
+    cellHeight=0;
     [self setTableHeader];
     [self getData];
 }
@@ -106,12 +108,27 @@
     NSDictionary *dic =@{@"deal_id":[_bulkDic objectForKey:@"deal_id"],@"buy_type":@"0"};
     [LLASIHelp requestWithURL:URL(@"/deal/deal_detail") paramDic:dic resultBlock:^(NSDictionary *dic) {
         allData=dic;
+        [_countCellHeightWebView  loadHTMLString:[self setTabWordSize:[self setWordSize:[allData objectForKey:@"package_desc"]]] baseURL:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            cellHeight =cellHeight+[ self getHeight];
+            [_countCellHeightWebView  loadHTMLString:[self setWordSize:[allData objectForKey:@"buy_notes"]] baseURL:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                cellHeight =cellHeight+ [ self getHeight];
+                [_myTableView reloadData];
+            });
+        });
         [_myTableView reloadData];
     } cancelBlock:^{
         SHOW(@"获取数据失败");
     } httpMethod:@"GET"];
 
 }
+-(float)getHeight
+{
+    UIScrollView *scroller = [_countCellHeightWebView.subviews objectAtIndex:0];
+    return scroller.contentSize.height;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -126,9 +143,58 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     LLBulkDetailTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"LLBulkDetailTableViewCell" owner:self options:nil] firstObject];
-//    cell.title.text =[allData objectForKey:@""]
-    
+    cell.title.text =[_bulkDic objectForKey:@"supplier_name"];
+    cell.subtitle.text =[allData objectForKey:@"sub_title"];
+    cell.subtitle.text =[allData objectForKey:@"sub_title"];
+    if (![[allData objectForKey:@"is_refund_validtime"] isEqualToString:@"1"]) {
+        cell.drawback.text =@"不支持随时退款";
+        [cell.drawbackImg setImage:[UIImage imageNamed:@"icon_yes"]];
+    }
+    if (![[allData objectForKey:@"is_refund_anytime"] isEqualToString:@"1"]) {
+        cell.overDrawback.text =@"不支持过期退款";
+        [cell.overDrawbackImg setImage:[UIImage imageNamed:@"icon_yes"]];
+    }
+    cell.haveSell.text =[NSString stringWithFormat:@"已销售%@",[allData objectForKey:@"sale_count"]];
+    cell.sellTime.text =[self calculate:[allData objectForKey:@"begin_time"] end:[allData objectForKey:@"end_time"]];
+
+    cell.score.text =[NSString stringWithFormat:@"%.1f",[[allData objectForKey:@"rate"] floatValue]];
+    cell.personNum.text =[NSString stringWithFormat:@"%@人评价",[allData objectForKey:@"rate_total_count"]];
+
+    cell.shopName.text =[allData objectForKey:@"shop_name"];
+    cell.shopAddress.text =[allData objectForKey:@"shop_address"];
+    cell.phone =[allData objectForKey:@"shop_phone"];
+
+    cell.packageStr = [self setTabWordSize:[self setWordSize:[allData objectForKey:@"package_desc"]]];
+    cell.purchaseStr = [self setWordSize:[allData objectForKey:@"buy_notes"]];
+
     return cell;
+}
+-(NSString *)setWordSize:(NSString *)str
+{
+    return [NSString stringWithFormat:@"%@%@",@"<div style=\"font-size:13px;color:black;\">",str];
+}
+-(NSString *)setTabWordSize:(NSString *)str
+{
+    return [str stringByReplacingOccurrencesOfString:@"<table>" withString:@"<table style=\"font-size:13px;\">"];
+}
+
+//根据开始结束时间挫  计算活动天数
+-(NSString *)calculate:(NSString*) startTime end:(NSString *)endTime
+{
+    NSString *returnStr=@"";
+    NSDate *d=[NSDate dateWithTimeIntervalSince1970:[startTime longLongValue]];
+    NSTimeInterval  timeInterval = [d timeIntervalSinceNow];
+    if (timeInterval>0) {
+        returnStr=@"开始";
+    }else{
+        d=[NSDate dateWithTimeIntervalSince1970:[endTime longLongValue]];
+        timeInterval = [d timeIntervalSinceNow];
+        if (timeInterval<0) {
+            return @"活动已结束";
+        }
+    }
+    returnStr =[NSString stringWithFormat:@"%ld天%ld小时%ld分%@",(long)timeInterval/(60*60*24),((long)timeInterval%(60*60*24))/(60*60),((long)timeInterval%(60*60))/60,returnStr];
+    return returnStr;
 }
 #pragma mark-
 #pragma mark UITableViewDelegate
@@ -145,7 +211,7 @@
     [_ticketButton setBackgroundImage:[[UIImage imageNamed:@"btn_orange"] resizableImageWithCapInsets:ed] forState:UIControlStateNormal];
     [_ticketButton setBackgroundImage:[[UIImage imageNamed:@"btn_orange_highlighted"] resizableImageWithCapInsets:ed] forState:UIControlStateHighlighted];
     //为sectionVIew加背景图片
-    UIImageView *imgViews =[[UIImageView alloc]initWithFrame:_sectionView.frame];
+    UIImageView *imgViews =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, _sectionView.W, _sectionView.H)];
     [imgViews setImage:[[UIImage imageNamed:@"cell_middle"] resizableImageWithCapInsets:ed]];
     [_sectionView insertSubview: imgViews atIndex:0];
     return _sectionView;
@@ -160,7 +226,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 600;//计算cell的高的
+    return 620-70-70+cellHeight;//计算cell的高的
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
