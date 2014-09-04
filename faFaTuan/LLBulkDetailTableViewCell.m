@@ -57,12 +57,12 @@
 
     
     [_packageTopView setFrame:CGRectMake(_packageTopView.X, _packageTopView.Y, _packageTopView.W, _package.endY+2)];
-    [_packageImage setFrame:_package.frame];
+    [_packageImage setFrame:CGRectMake(_packageImage.X, _packageImage.Y, _packageImage.W, _package.H+3)];
     
     [_purchaseTopView setFrame:CGRectMake(_purchaseTopView.X, _packageTopView.endY+10, _purchaseTopView.W, _purchase.endY+2)];
-    [_purchaseImage setFrame:_purchase.frame];
+    [_purchaseImage setFrame:CGRectMake(_purchaseImage.X, _purchaseImage.Y, _purchaseImage.W, _purchase.H+3)];
     
-    [self setFrame:CGRectMake(self.X, self.Y, self.W, _purchaseTopView.endY+10)];
+    [self setFrame:CGRectMake(self.X, self.Y, self.W, _purchaseTopView.endY+20)];
 }
 -(void)banScrool:(UIWebView *)web
 {

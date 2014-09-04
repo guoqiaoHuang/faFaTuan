@@ -10,12 +10,15 @@
 #import "FileHelpers.h"
 #import "LLBulkDetailViewController.h"
 
+#import "LLSortBulkViewController.h"
 #define HEADER_COUNT 8
 
 
 @interface LLBulkViewController (){
     NSArray *dataAry;
     NSArray *headerAry;
+    
+    UIImageView *animatImgView;
 }
 
 @end
@@ -40,10 +43,12 @@
     [self.myTableView addSubview:_refreshHeaderView];
 
     [HCNavigationAndStatusBarTool setNavigationBackground:self];
-    
+
     [self addTabbarLeft];
+    animatImgView=[UIImageView startAnimationAt:self.view];
+
     [self getData];
-    [self setFoot];
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -70,20 +75,29 @@
     NSDictionary *dic2 =@{@"parent_id":@"0"};
     [LLASIHelp requestWithURL:URL(@"/init/list_deal_cate") paramDic:dic2 resultBlock:^(NSDictionary *dic) {
         headerAry=[dic objectForKey:@"data"];
-        [self setHeader];
+        [self getTableData];
     } cancelBlock:^{
         SHOW(@"获取数据失败");
+        [UIImageView stopAnimation:animatImgView];
     } httpMethod:@"GET"];
-
+}
+-(void)getTableData
+{
     NSDictionary *dic =@{@"count":@"20"};
     [LLASIHelp requestWithURL:URL(@"/deal/list_hotsale") paramDic:dic resultBlock:^(NSDictionary *dic) {
         dataAry=[dic objectForKey:@"data"];
+        //停止动画
+        [UIImageView stopAnimation:animatImgView];
         [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:0.0];
-
+        
+        [self setHeader];
+        [self setFoot];
         [_myTableView reloadData];
     } cancelBlock:^{
         SHOW(@"获取数据失败");
+        [UIImageView stopAnimation:animatImgView];
     } httpMethod:@"GET"];
+
 }
 /**
  *  设置tableview的头（美食等一级分类）
@@ -98,6 +112,10 @@
         UIImageView *imgView =[UIImageView allocInitWith:CGPointMake(views.W/8+(i%4)*views.W/4,views.H/4+(i/4)*views.H/2-7) imgName:(HEADER_COUNT-1)==i?@"more":[headerAry[i] objectForKey:@"uname"] view:views];
         UILabel *lab=[UILabel allocInitWith:CGRectMake((i%4)*views.W/4, imgView.endY+3, views.W/4, 21) title:(HEADER_COUNT-1)==i?@"更多分类":[headerAry[i] objectForKey:@"name"] font:12 color:[UIColor blackColor] view:views];
         [lab setTextAlignment:NSTextAlignmentCenter];
+        UIButton *btn =[[UIButton alloc]initWithFrame:CGRectMake((i%4)*views.W/4, views.H/2*(i/4), views.W/4, views.H/2)];
+        [btn setTag:(8000+i)];
+        [views addSubview:btn];
+        [btn addTarget:self action:@selector(choose:) forControlEvents:UIControlEventTouchUpInside];
     }
     [allView addSubview:views];
     
@@ -120,6 +138,17 @@
 
     _myTableView.tableHeaderView=allView;
 }
+-(void)choose:(UIButton*)btn
+{
+    if ((btn.tag-8000)==7) {
+        return;
+    }
+    LLSortBulkViewController *next =[[LLSortBulkViewController alloc]init];
+    next.typeName=[headerAry[btn.tag-8000] objectForKey:@"name"];
+    next.mark=(btn.tag-8000)+1;//如果  对应的id发生变化需要更改
+    next.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:next animated:YES];
+}
 /**
  *  设置tableview的尾（查看全部团购（button））
  */
@@ -127,8 +156,17 @@
 {
     UIView *views =[[UIView alloc]initWithFrame:CGRectMake(0, 50, self.view.W, 50)];
     [views setBackgroundColor:[UIColor colorWithRed:235.0/255 green:235.0/255 blue:241.0/255 alpha:1]];
-    [UIButton buttonWithFrame:CGRectMake(10, 8, self.view.W-20,views.H-16) type:UIButtonTypeCustom title:@"查看全部团购" font:14 titleColor:[UIColor colorWithRed:25.0/255 green:182.0/255 blue:158.0/255 alpha:1]  normalImg:@"btn_homepage_hotdealMore_normal" selectedImg:nil tag:23000 subview:views isStretch:YES];
+    UIButton *btn =[UIButton buttonWithFrame:CGRectMake(10, 8, self.view.W-20,views.H-16) type:UIButtonTypeCustom title:@"查看全部团购" font:14 titleColor:[UIColor colorWithRed:25.0/255 green:182.0/255 blue:158.0/255 alpha:1]  normalImg:@"btn_homepage_hotdealMore_normal" selectedImg:nil tag:23000 subview:views isStretch:YES];
+    [btn addTarget:self action:@selector(allBulk) forControlEvents:UIControlEventTouchUpInside];
     _myTableView.tableFooterView=views;
+}
+-(void)allBulk
+{
+    LLSortBulkViewController *next =[[LLSortBulkViewController alloc]init];
+    next.typeName=@"全部分类";
+    next.mark=0;
+    next.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:next animated:YES];
 }
 #pragma mark-
 #pragma mark-UITableViewDataSource

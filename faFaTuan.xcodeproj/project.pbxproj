@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6E16EB8F19A9971A00B1A3F9 /* LLOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */; };
 		6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */; };
+		6E18992419B83A0D002FF038 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18992319B83A0D002FF038 /* MBProgressHUD.m */; };
+		6E18D10119B573F40004B52C /* LLSortBulkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18D0FF19B573F40004B52C /* LLSortBulkTableViewCell.m */; };
+		6E18D10219B573F40004B52C /* LLSortBulkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E18D10019B573F40004B52C /* LLSortBulkTableViewCell.xib */; };
+		6E1B3FE019AC6E4B00C18EE9 /* LLSortBulkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B3FDE19AC6E4B00C18EE9 /* LLSortBulkViewController.m */; };
+		6E1B3FE119AC6E4B00C18EE9 /* LLSortBulkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B3FDF19AC6E4B00C18EE9 /* LLSortBulkViewController.xib */; };
 		6E1C40A41999B1F900298C2B /* LLBulkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40A31999B1F900298C2B /* LLBulkViewController.m */; };
 		6E1C40AE1999B8CF00298C2B /* HCNavigationAndStatusBarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40AD1999B8CF00298C2B /* HCNavigationAndStatusBarTool.m */; };
 		6E1C40B41999BDF000298C2B /* LLMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40B31999BDF000298C2B /* LLMerchantViewController.m */; };
@@ -16,6 +21,7 @@
 		6E1C40BA1999BE1200298C2B /* LLMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40B91999BE1200298C2B /* LLMoreViewController.m */; };
 		6E1C40BD1999C12200298C2B /* UIView+Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40BC1999C12200298C2B /* UIView+Coordinate.m */; };
 		6E1C40C11999C2FC00298C2B /* UILabel+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C40C01999C2FC00298C2B /* UILabel+extend.m */; };
+		6E1C49B319B059A10026DFCD /* DropDownListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C49B119B059A10026DFCD /* DropDownListView.m */; };
 		6E1C70211998BB9400B95440 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70201998BB9400B95440 /* Foundation.framework */; };
 		6E1C70231998BB9400B95440 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70221998BB9400B95440 /* CoreGraphics.framework */; };
 		6E1C70251998BB9400B95440 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1C70241998BB9400B95440 /* UIKit.framework */; };
@@ -82,6 +88,14 @@
 		6E16EB8C19A9971A00B1A3F9 /* LLOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLOrderDetailsViewController.h; sourceTree = "<group>"; };
 		6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLOrderDetailsViewController.m; sourceTree = "<group>"; };
 		6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLOrderDetailsViewController.xib; sourceTree = "<group>"; };
+		6E18992219B83A0D002FF038 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6E18992319B83A0D002FF038 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6E18D0FE19B573F40004B52C /* LLSortBulkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSortBulkTableViewCell.h; sourceTree = "<group>"; };
+		6E18D0FF19B573F40004B52C /* LLSortBulkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSortBulkTableViewCell.m; sourceTree = "<group>"; };
+		6E18D10019B573F40004B52C /* LLSortBulkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSortBulkTableViewCell.xib; sourceTree = "<group>"; };
+		6E1B3FDD19AC6E4B00C18EE9 /* LLSortBulkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSortBulkViewController.h; sourceTree = "<group>"; };
+		6E1B3FDE19AC6E4B00C18EE9 /* LLSortBulkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSortBulkViewController.m; sourceTree = "<group>"; };
+		6E1B3FDF19AC6E4B00C18EE9 /* LLSortBulkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSortBulkViewController.xib; sourceTree = "<group>"; };
 		6E1C40A21999B1F900298C2B /* LLBulkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkViewController.h; sourceTree = "<group>"; };
 		6E1C40A31999B1F900298C2B /* LLBulkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkViewController.m; sourceTree = "<group>"; };
 		6E1C40AC1999B8CF00298C2B /* HCNavigationAndStatusBarTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNavigationAndStatusBarTool.h; sourceTree = "<group>"; };
@@ -96,6 +110,9 @@
 		6E1C40BC1999C12200298C2B /* UIView+Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Coordinate.m"; sourceTree = "<group>"; };
 		6E1C40BF1999C2FC00298C2B /* UILabel+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+extend.h"; sourceTree = "<group>"; };
 		6E1C40C01999C2FC00298C2B /* UILabel+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+extend.m"; sourceTree = "<group>"; };
+		6E1C49B019B059A10026DFCD /* DropDownListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownListView.h; sourceTree = "<group>"; };
+		6E1C49B119B059A10026DFCD /* DropDownListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownListView.m; sourceTree = "<group>"; };
+		6E1C49B219B059A10026DFCD /* DropDownChooseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownChooseProtocol.h; sourceTree = "<group>"; };
 		6E1C701D1998BB9400B95440 /* faFaTuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faFaTuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C70201998BB9400B95440 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1C70221998BB9400B95440 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,13 +233,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E18992119B839F7002FF038 /* 旋转框 */ = {
+			isa = PBXGroup;
+			children = (
+				6E18992219B83A0D002FF038 /* MBProgressHUD.h */,
+				6E18992319B83A0D002FF038 /* MBProgressHUD.m */,
+			);
+			name = "旋转框";
+			sourceTree = "<group>";
+		};
+		6E1B3FDC19AC6D9400C18EE9 /* 团购分类 */ = {
+			isa = PBXGroup;
+			children = (
+				6E18D0FE19B573F40004B52C /* LLSortBulkTableViewCell.h */,
+				6E18D0FF19B573F40004B52C /* LLSortBulkTableViewCell.m */,
+				6E18D10019B573F40004B52C /* LLSortBulkTableViewCell.xib */,
+				6E1B3FDD19AC6E4B00C18EE9 /* LLSortBulkViewController.h */,
+				6E1B3FDE19AC6E4B00C18EE9 /* LLSortBulkViewController.m */,
+				6E1B3FDF19AC6E4B00C18EE9 /* LLSortBulkViewController.xib */,
+			);
+			name = "团购分类";
+			sourceTree = "<group>";
+		};
 		6E1C40A11999B1D100298C2B /* 团购 */ = {
 			isa = PBXGroup;
 			children = (
+				6E1B3FDC19AC6D9400C18EE9 /* 团购分类 */,
 				6E1D485419A1D420002775A8 /* 团购详情 */,
-				6E519C6F199C581400EE418E /* 团购cell */,
-				6E1C40A21999B1F900298C2B /* LLBulkViewController.h */,
-				6E1C40A31999B1F900298C2B /* LLBulkViewController.m */,
+				6E519C6F199C581400EE418E /* 团购开始 */,
 			);
 			name = "团购";
 			sourceTree = "<group>";
@@ -244,6 +282,8 @@
 		6E1C40AB1999B8B600298C2B /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				6E18992119B839F7002FF038 /* 旋转框 */,
+				6E1C49AF19B0598F0026DFCD /* 下拉菜单 */,
 				6E2C1DAA19A048A3007A0E24 /* 下拉刷新 */,
 				6E1D3678199F22AB0001F47D /* 图片缓存 */,
 				6E519C77199C644700EE418E /* 网络请求 */,
@@ -295,6 +335,16 @@
 				6E1C40BC1999C12200298C2B /* UIView+Coordinate.m */,
 			);
 			name = "扩展函数";
+			sourceTree = "<group>";
+		};
+		6E1C49AF19B0598F0026DFCD /* 下拉菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				6E1C49B019B059A10026DFCD /* DropDownListView.h */,
+				6E1C49B119B059A10026DFCD /* DropDownListView.m */,
+				6E1C49B219B059A10026DFCD /* DropDownChooseProtocol.h */,
+			);
+			name = "下拉菜单";
 			sourceTree = "<group>";
 		};
 		6E1C70141998BB9400B95440 = {
@@ -404,11 +454,11 @@
 				6E2D43EA19A344E200246AEB /* LLBulkDetailTableViewCell.h */,
 				6E2D43EB19A344E200246AEB /* LLBulkDetailTableViewCell.m */,
 				6E2D43EC19A344E200246AEB /* LLBulkDetailTableViewCell.xib */,
+				6E2B2D6919A46E2000E621D7 /* LLBulkDetailSectionPrice.h */,
+				6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */,
 				6E16EB8C19A9971A00B1A3F9 /* LLOrderDetailsViewController.h */,
 				6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */,
 				6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */,
-				6E2B2D6919A46E2000E621D7 /* LLBulkDetailSectionPrice.h */,
-				6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -422,15 +472,17 @@
 			name = "下拉刷新";
 			sourceTree = "<group>";
 		};
-		6E519C6F199C581400EE418E /* 团购cell */ = {
+		6E519C6F199C581400EE418E /* 团购开始 */ = {
 			isa = PBXGroup;
 			children = (
+				6E1C40A21999B1F900298C2B /* LLBulkViewController.h */,
+				6E1C40A31999B1F900298C2B /* LLBulkViewController.m */,
 				6E519C70199C590900EE418E /* LLBulkTableViewCell.h */,
 				6E519C71199C590900EE418E /* LLBulkTableViewCell.m */,
 				6E1D485119A1C7EE002775A8 /* LLPriceView.h */,
 				6E1D485219A1C7EE002775A8 /* LLPriceView.m */,
 			);
-			name = "团购cell";
+			name = "团购开始";
 			sourceTree = "<group>";
 		};
 		6E519C76199C643900EE418E /* 导航栏 */ = {
@@ -586,6 +638,8 @@
 				6E1C702B1998BB9400B95440 /* InfoPlist.strings in Resources */,
 				6E1C70341998BB9400B95440 /* Main.storyboard in Resources */,
 				6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */,
+				6E18D10219B573F40004B52C /* LLSortBulkTableViewCell.xib in Resources */,
+				6E1B3FE119AC6E4B00C18EE9 /* LLSortBulkViewController.xib in Resources */,
 				6E1D485919A1D4B7002775A8 /* LLBulkDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +674,7 @@
 				6E519CAC199C65CF00EE418E /* ASIDataCompressor.m in Sources */,
 				6E519CAA199C65CF00EE418E /* ASIDownloadCache.m in Sources */,
 				6E1C705A1998C04200B95440 /* LLGuideViewController.m in Sources */,
+				6E18992419B83A0D002FF038 /* MBProgressHUD.m in Sources */,
 				6E1C40BD1999C12200298C2B /* UIView+Coordinate.m in Sources */,
 				6E1C40B71999BE0700298C2B /* LLMyViewController.m in Sources */,
 				6E519C8A199C654300EE418E /* SBJsonParser.m in Sources */,
@@ -632,8 +687,11 @@
 				6E519C86199C654300EE418E /* NSObject+SBJSON.m in Sources */,
 				6E1C40BA1999BE1200298C2B /* LLMoreViewController.m in Sources */,
 				6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */,
+				6E1C49B319B059A10026DFCD /* DropDownListView.m in Sources */,
+				6E18D10119B573F40004B52C /* LLSortBulkTableViewCell.m in Sources */,
 				6E519CA8199C65CF00EE418E /* ASIHTTPRequest.m in Sources */,
 				6E519C88199C654300EE418E /* SBJSON.m in Sources */,
+				6E1B3FE019AC6E4B00C18EE9 /* LLSortBulkViewController.m in Sources */,
 				6E1C702D1998BB9400B95440 /* main.m in Sources */,
 				6E519CA7199C65CF00EE418E /* ASIFormDataRequest.m in Sources */,
 				6E1D367E199F22C30001F47D /* ImageCacher.m in Sources */,

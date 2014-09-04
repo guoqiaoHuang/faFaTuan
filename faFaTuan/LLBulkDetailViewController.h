@@ -26,6 +26,4 @@
 - (IBAction)buyAtOnce:(id)sender;//马上购买
 @property (weak, nonatomic) IBOutlet UILabel *nowPrice;//现价
 @property (weak, nonatomic) IBOutlet UILabel *originPrice;//原价
-
-@property (weak, nonatomic) IBOutlet UIWebView *countCellHeightWebView;//计算cell高度用
 @end

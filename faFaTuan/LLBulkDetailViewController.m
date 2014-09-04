@@ -14,6 +14,9 @@
     NSDictionary *allData;
     NSArray *imgAry;
     float cellHeight;
+    UIWebView *web;
+    
+    UIImageView *animatImgView;
 }
 
 @end
@@ -35,8 +38,15 @@
     // Do any additional setup after loading the view.
     [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:@"团购详情"];
     [HCNavigationAndStatusBarTool customLeftBackButton:self sel:@selector(goBack)];
+    
+    //用来计算cell的高度
+    web =[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 296, 1)];
+    [self.view addSubview:web];
     cellHeight=0;
-    [self setTableHeader];
+    
+    //开始动画
+    [_myTableView setHidden:YES];
+    animatImgView=[UIImageView startAnimationAt:self.view];
     [self getData];
 }
 -(void)goBack
@@ -80,6 +90,7 @@
 {
     for (int i=0; i<[imgAry count]; i++) {
         UIImageView *imagView =[UIImageView allocInitWithRect:CGRectMake(i*_viewImageScroll.W, (_viewImageScroll.H-195)/2, _viewImageScroll.W, 195) imgName:nil view:_viewImageScroll];
+        [imagView setImage:[UIImage imageNamed:@""]];
         //加载多张图片
         NSString *imgString =imgAry[i];
         NSURL *imgUrl=[NSURL URLWithString:imgString];
@@ -108,24 +119,32 @@
     NSDictionary *dic =@{@"deal_id":[_bulkDic objectForKey:@"deal_id"],@"buy_type":@"0"};
     [LLASIHelp requestWithURL:URL(@"/deal/deal_detail") paramDic:dic resultBlock:^(NSDictionary *dic) {
         allData=dic;
-        [_countCellHeightWebView  loadHTMLString:[self setTabWordSize:[self setWordSize:[allData objectForKey:@"package_desc"]]] baseURL:nil];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //计算cell中web的高度
+        [web  loadHTMLString:[self setTabWordSize:[self setWordSize:[allData objectForKey:@"package_desc"]]] baseURL:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             cellHeight =cellHeight+[ self getHeight];
-            [_countCellHeightWebView  loadHTMLString:[self setWordSize:[allData objectForKey:@"buy_notes"]] baseURL:nil];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [web  loadHTMLString:[self setWordSize:[allData objectForKey:@"buy_notes"]] baseURL:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 cellHeight =cellHeight+ [ self getHeight];
+                
+                //停止动画
+                [UIImageView stopAnimation:animatImgView];
+                
+                [self setTableHeader];
+                [_myTableView setHidden:NO];
                 [_myTableView reloadData];
             });
         });
-        [_myTableView reloadData];
     } cancelBlock:^{
         SHOW(@"获取数据失败");
+        [UIImageView stopAnimation:animatImgView];
     } httpMethod:@"GET"];
 
 }
 -(float)getHeight
 {
-    UIScrollView *scroller = [_countCellHeightWebView.subviews objectAtIndex:0];
+    UIScrollView *scroller = [web.subviews objectAtIndex:0];
     return scroller.contentSize.height;
 }
 
@@ -211,7 +230,7 @@
     [_ticketButton setBackgroundImage:[[UIImage imageNamed:@"btn_orange"] resizableImageWithCapInsets:ed] forState:UIControlStateNormal];
     [_ticketButton setBackgroundImage:[[UIImage imageNamed:@"btn_orange_highlighted"] resizableImageWithCapInsets:ed] forState:UIControlStateHighlighted];
     //为sectionVIew加背景图片
-    UIImageView *imgViews =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, _sectionView.W, _sectionView.H)];
+    UIImageView *imgViews =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, _sectionView.W, _sectionView.H+1)];
     [imgViews setImage:[[UIImage imageNamed:@"cell_middle"] resizableImageWithCapInsets:ed]];
     [_sectionView insertSubview: imgViews atIndex:0];
     return _sectionView;
@@ -226,7 +245,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 620-70-70+cellHeight;//计算cell的高的
+    return 630-70-70+cellHeight;//计算cell的高的
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
