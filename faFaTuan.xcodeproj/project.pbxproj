@@ -44,6 +44,8 @@
 		6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D485219A1C7EE002775A8 /* LLPriceView.m */; };
 		6E1D485919A1D4B7002775A8 /* LLBulkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D485719A1D4B7002775A8 /* LLBulkDetailViewController.xib */; };
 		6E20C0AF19AACEA100DB03C9 /* LLBulkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20C0AE19AACEA100DB03C9 /* LLBulkDetailViewController.m */; };
+		6E242BD119BB090D0029858A /* LLMoreSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E242BCF19BB090D0029858A /* LLMoreSortViewController.m */; };
+		6E242BD219BB090D0029858A /* LLMoreSortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E242BD019BB090D0029858A /* LLMoreSortViewController.xib */; };
 		6E2B2D6B19A46E2000E621D7 /* LLBulkDetailSectionPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */; };
 		6E2C1DA919A04067007A0E24 /* UIButton+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DA819A04067007A0E24 /* UIButton+extend.m */; };
 		6E2C1DBD19A048BD007A0E24 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */; };
@@ -149,6 +151,9 @@
 		6E1D485519A1D4B7002775A8 /* LLBulkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkDetailViewController.h; sourceTree = "<group>"; };
 		6E1D485719A1D4B7002775A8 /* LLBulkDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBulkDetailViewController.xib; sourceTree = "<group>"; };
 		6E20C0AE19AACEA100DB03C9 /* LLBulkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkDetailViewController.m; sourceTree = "<group>"; };
+		6E242BCE19BB090D0029858A /* LLMoreSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMoreSortViewController.h; sourceTree = "<group>"; };
+		6E242BCF19BB090D0029858A /* LLMoreSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMoreSortViewController.m; sourceTree = "<group>"; };
+		6E242BD019BB090D0029858A /* LLMoreSortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMoreSortViewController.xib; sourceTree = "<group>"; };
 		6E2B2D6919A46E2000E621D7 /* LLBulkDetailSectionPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBulkDetailSectionPrice.h; sourceTree = "<group>"; };
 		6E2B2D6A19A46E2000E621D7 /* LLBulkDetailSectionPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBulkDetailSectionPrice.m; sourceTree = "<group>"; };
 		6E2C1DA719A04067007A0E24 /* UIButton+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+extend.h"; sourceTree = "<group>"; };
@@ -257,6 +262,9 @@
 				6E1B3FDD19AC6E4B00C18EE9 /* LLSortBulkViewController.h */,
 				6E1B3FDE19AC6E4B00C18EE9 /* LLSortBulkViewController.m */,
 				6E1B3FDF19AC6E4B00C18EE9 /* LLSortBulkViewController.xib */,
+				6E242BCE19BB090D0029858A /* LLMoreSortViewController.h */,
+				6E242BCF19BB090D0029858A /* LLMoreSortViewController.m */,
+				6E242BD019BB090D0029858A /* LLMoreSortViewController.xib */,
 			);
 			name = "团购分类";
 			sourceTree = "<group>";
@@ -645,6 +653,7 @@
 			files = (
 				6E1C70391998BB9400B95440 /* Images.xcassets in Resources */,
 				6E2D43EE19A344E200246AEB /* LLBulkDetailTableViewCell.xib in Resources */,
+				6E242BD219BB090D0029858A /* LLMoreSortViewController.xib in Resources */,
 				6E1C702B1998BB9400B95440 /* InfoPlist.strings in Resources */,
 				6E1C70341998BB9400B95440 /* Main.storyboard in Resources */,
 				6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */,
@@ -701,6 +710,7 @@
 				6E1D485319A1C7EE002775A8 /* LLPriceView.m in Sources */,
 				6E1C49B319B059A10026DFCD /* DropDownListView.m in Sources */,
 				6E18D10119B573F40004B52C /* LLSortBulkTableViewCell.m in Sources */,
+				6E242BD119BB090D0029858A /* LLMoreSortViewController.m in Sources */,
 				6E519CA8199C65CF00EE418E /* ASIHTTPRequest.m in Sources */,
 				6E519C88199C654300EE418E /* SBJSON.m in Sources */,
 				6E1B3FE019AC6E4B00C18EE9 /* LLSortBulkViewController.m in Sources */,

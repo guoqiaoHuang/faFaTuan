@@ -11,6 +11,7 @@
 #import "LLBulkDetailViewController.h"
 
 #import "LLSortBulkViewController.h"
+#import "LLMoreSortViewController.h"
 #define HEADER_COUNT 8
 
 
@@ -141,6 +142,9 @@
 -(void)choose:(UIButton*)btn
 {
     if ((btn.tag-8000)==7) {
+        LLMoreSortViewController *next =[[LLMoreSortViewController alloc]init];
+        next.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:next animated:YES];
         return;
     }
     LLSortBulkViewController *next =[[LLSortBulkViewController alloc]init];
