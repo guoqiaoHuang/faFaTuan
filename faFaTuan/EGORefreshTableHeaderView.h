@@ -10,12 +10,7 @@
 /**
  *下拉的三个状态
  */
-typedef enum{
-	EGOOPullRefreshPulling = 0,
-	EGOOPullRefreshNormal,
-	EGOOPullRefreshLoading,	
-} EGOPullRefreshState;
-
+#import "EGORefresh.h"
 
 
 @protocol EGORefreshTableHeaderDelegate;

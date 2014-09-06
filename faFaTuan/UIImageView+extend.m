@@ -34,7 +34,7 @@
     if (!views) {
         return nil;
     }
-    UIImageView *myAnimatedView = [[UIImageView alloc]initWithFrame:CGRectMake((views.W-172.8)/2, (views.H-64-50-194.4)/2, 172.8, 194.4)];
+    UIImageView *myAnimatedView = [[UIImageView alloc]initWithFrame:CGRectMake((views.W-172.8)/2, ([[UIScreen mainScreen] bounds].size.height-64-50-194.4)/2, 172.8, 194.4)];
     //animationImages属性返回一个存放动画图片的数组
     myAnimatedView.animationImages = @[[UIImage imageNamed:@"icon_loading_animating_1"],
                                        [UIImage imageNamed:@"icon_loading_animating_2"]];

@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		6E16EB8F19A9971A00B1A3F9 /* LLOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */; };
 		6E16EB9019A9971A00B1A3F9 /* LLOrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */; };
+		6E18153A19B953C700597F2B /* EGORefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18153919B953C700597F2B /* EGORefresh.m */; };
 		6E18992419B83A0D002FF038 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18992319B83A0D002FF038 /* MBProgressHUD.m */; };
+		6E18992719B867D3002FF038 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18992619B867D3002FF038 /* EGORefreshTableFooterView.m */; };
 		6E18D10119B573F40004B52C /* LLSortBulkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18D0FF19B573F40004B52C /* LLSortBulkTableViewCell.m */; };
 		6E18D10219B573F40004B52C /* LLSortBulkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E18D10019B573F40004B52C /* LLSortBulkTableViewCell.xib */; };
 		6E1B3FE019AC6E4B00C18EE9 /* LLSortBulkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B3FDE19AC6E4B00C18EE9 /* LLSortBulkViewController.m */; };
@@ -88,8 +90,12 @@
 		6E16EB8C19A9971A00B1A3F9 /* LLOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLOrderDetailsViewController.h; sourceTree = "<group>"; };
 		6E16EB8D19A9971A00B1A3F9 /* LLOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLOrderDetailsViewController.m; sourceTree = "<group>"; };
 		6E16EB8E19A9971A00B1A3F9 /* LLOrderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLOrderDetailsViewController.xib; sourceTree = "<group>"; };
+		6E18153819B953C700597F2B /* EGORefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefresh.h; sourceTree = "<group>"; };
+		6E18153919B953C700597F2B /* EGORefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefresh.m; sourceTree = "<group>"; };
 		6E18992219B83A0D002FF038 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		6E18992319B83A0D002FF038 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6E18992519B867D3002FF038 /* EGORefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableFooterView.h; sourceTree = "<group>"; };
+		6E18992619B867D3002FF038 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
 		6E18D0FE19B573F40004B52C /* LLSortBulkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSortBulkTableViewCell.h; sourceTree = "<group>"; };
 		6E18D0FF19B573F40004B52C /* LLSortBulkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSortBulkTableViewCell.m; sourceTree = "<group>"; };
 		6E18D10019B573F40004B52C /* LLSortBulkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSortBulkTableViewCell.xib; sourceTree = "<group>"; };
@@ -288,7 +294,6 @@
 				6E1D3678199F22AB0001F47D /* 图片缓存 */,
 				6E519C77199C644700EE418E /* 网络请求 */,
 				6E519C76199C643900EE418E /* 导航栏 */,
-				6E1C40BE1999C12D00298C2B /* 扩展函数 */,
 			);
 			name = "工具";
 			sourceTree = "<group>";
@@ -466,6 +471,10 @@
 		6E2C1DAA19A048A3007A0E24 /* 下拉刷新 */ = {
 			isa = PBXGroup;
 			children = (
+				6E18153819B953C700597F2B /* EGORefresh.h */,
+				6E18153919B953C700597F2B /* EGORefresh.m */,
+				6E18992519B867D3002FF038 /* EGORefreshTableFooterView.h */,
+				6E18992619B867D3002FF038 /* EGORefreshTableFooterView.m */,
 				6E2C1DB319A048BD007A0E24 /* EGORefreshTableHeaderView.h */,
 				6E2C1DB419A048BD007A0E24 /* EGORefreshTableHeaderView.m */,
 			);
@@ -497,6 +506,7 @@
 		6E519C77199C644700EE418E /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
+				6E1C40BE1999C12D00298C2B /* 扩展函数 */,
 				6E519CB3199C664500EE418E /* LLASIHelp.h */,
 				6E519CB4199C664500EE418E /* LLASIHelp.m */,
 				6E519C90199C65BB00EE418E /* asi */,
@@ -664,9 +674,11 @@
 				6E519C8B199C654300EE418E /* SBJsonWriter.m in Sources */,
 				6E1C40B41999BDF000298C2B /* LLMerchantViewController.m in Sources */,
 				6E519C6E199C477E00EE418E /* UIImageView+extend.m in Sources */,
+				6E18153A19B953C700597F2B /* EGORefresh.m in Sources */,
 				6E519CB5199C664500EE418E /* LLASIHelp.m in Sources */,
 				6E2D43ED19A344E200246AEB /* LLBulkDetailTableViewCell.m in Sources */,
 				6E519CAF199C65EA00EE418E /* Reachability.m in Sources */,
+				6E18992719B867D3002FF038 /* EGORefreshTableFooterView.m in Sources */,
 				6E1C70311998BB9400B95440 /* LLAppDelegate.m in Sources */,
 				6E519CB2199C65F300EE418E /* ASIWebPageRequest.m in Sources */,
 				6E16EB8F19A9971A00B1A3F9 /* LLOrderDetailsViewController.m in Sources */,

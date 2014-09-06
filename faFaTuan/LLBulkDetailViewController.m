@@ -122,10 +122,10 @@
         
         //计算cell中web的高度
         [web  loadHTMLString:[self setTabWordSize:[self setWordSize:[allData objectForKey:@"package_desc"]]] baseURL:nil];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             cellHeight =cellHeight+[ self getHeight];
             [web  loadHTMLString:[self setWordSize:[allData objectForKey:@"buy_notes"]] baseURL:nil];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 cellHeight =cellHeight+ [ self getHeight];
                 
                 //停止动画

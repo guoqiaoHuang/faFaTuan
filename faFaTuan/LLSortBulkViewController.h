@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "DropDownChooseProtocol.h"
 #import "EGORefreshTableHeaderView.h"
+#import "EGORefreshTableFooterView.h"
 
-@interface LLSortBulkViewController : UIViewController<DropDownChooseDelegate,DropDownChooseDataSource,UITableViewDelegate,UITableViewDataSource,EGORefreshTableHeaderDelegate>{
+@interface LLSortBulkViewController : UIViewController<DropDownChooseDelegate,DropDownChooseDataSource,UITableViewDelegate,UITableViewDataSource,EGORefreshTableHeaderDelegate,EGORefreshTableFooterDelegate>{
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL _reloading;
+    
+    EGORefreshTableFooterView *refreshView;
+    BOOL reloading;
+    
+    int pages;
 }
 @property (nonatomic ,assign) int mark;
 @property (nonatomic ,strong) NSString *typeName;//分类名称

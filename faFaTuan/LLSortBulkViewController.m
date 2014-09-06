@@ -22,6 +22,7 @@
     
     NSMutableArray *selectedArray;
     UIImageView *animatImgView;
+    int allPage;
 }
 
 
@@ -37,13 +38,15 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:_typeName];
     [HCNavigationAndStatusBarTool customLeftBackButton:self sel:@selector(goBack)];
-    
+    [_myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-64-drop_down_menu_h)];
+
+    pages=1;
+    allPage=-1;
     _refreshHeaderView= [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f-self.myTableView.H, self.view.W, self.myTableView.H)];
     _refreshHeaderView.delegate = self;
     [self.myTableView addSubview:_refreshHeaderView];
@@ -52,7 +55,6 @@
     selectedArray =[[NSMutableArray alloc]initWithObjects:[NSString stringWithFormat:@"%d",_mark],@"0",@"0",@"-1", nil];
     
     [self.myTableView registerNib:[UINib nibWithNibName:@"LLSortBulkTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SortBulks"];
-    [self.myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-20-drop_down_menu_h-(IOS7_OR_LATER?0:44))];
 
     animatImgView=[UIImageView startAnimationAt:self.view];
     [self getDropDownData];
@@ -119,6 +121,11 @@
     dropDownView.mSuperView = self.view;
     [self.view addSubview:dropDownView];
     
+    refreshView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.W,33)];
+    refreshView.delegate = self;
+    _myTableView.tableFooterView=refreshView;
+    reloading = NO;
+    
     [self getList:[NSString stringWithFormat:@"%d",_mark==0?_mark:_mark+1000] area:@"0" sort:@"default" page:1];
 }
 -(NSMutableArray *)sortArray:(NSArray *)arys
@@ -164,12 +171,13 @@
     [HCNavigationAndStatusBarTool setNavigationTitle:self
                                             andTitle:[selectedArray[3] isEqualToString:@"-1"]||[selectedArray[3] isEqualToString:@"0"]?[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"name"]:[[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"levelTwo"][[selectedArray[3] integerValue]]objectForKey:@"name"]];
     //更新tableView
+    pages=1;
     [self getList: [selectedArray[3] isEqualToString:@"-1"]?
                      [chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"id"]
                      :[[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"levelTwo"][[selectedArray[3] integerValue]]objectForKey:@"id"]
              area:[chooseArray[1][[selectedArray[1] integerValue]] objectForKey:@"id"]
              sort:[chooseArray[2][[selectedArray[2] integerValue]] objectForKey:@"id"]
-             page:1];
+             page:pages];
 }
 #pragma mark -- dropdownList DataSource
 //选项卡图片
@@ -243,12 +251,22 @@
     [dic setObject:@"20" forKey:@"page_size"];
     //获得街道列表
     [LLASIHelp requestWithURL:URL(@"/deal/list") paramDic:dic resultBlock:^(NSDictionary *dic) {
-        allArray =[dic objectForKey:@"data"];
-        [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:0.0];
-        [self.myTableView reloadData];
+        allPage =[[dic objectForKey:@"total_count"] integerValue];
+        if (page==1) {
+            allArray =[dic objectForKey:@"data"];
+        }else{
+            for (NSArray *ary in [dic objectForKey:@"data"]) {
+                [allArray addObject:ary];
+            }
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self doneLoadingTableViewData];
+            [self.myTableView reloadData];
+            //停止动画
+            [UIImageView stopAnimation:animatImgView];
 
-        //停止动画
-        [UIImageView stopAnimation:animatImgView];
+        });
+        
     } cancelBlock:^{
         SHOW(@"获取数据失败");
         [UIImageView stopAnimation:animatImgView];
@@ -304,27 +322,60 @@
 //UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+    [refreshView egoRefreshScrollViewDidScroll:scrollView];//下拉加载更多
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+    [refreshView egoRefreshScrollViewDidEndDragging:scrollView];//下拉加载更多
 }
 //数据加载完成
 - (void)doneLoadingTableViewData{
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
+    
+    reloading = NO;//下拉加载更多
+    [refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
 }
 //EGORefreshTableHeaderDelegate Methods
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
 	_reloading = YES;
-    
+    pages=1;
     [self getList: [selectedArray[3] isEqualToString:@"-1"]?
      [chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"id"]
                  :[[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"levelTwo"][[selectedArray[3] integerValue]]objectForKey:@"id"]
              area:[chooseArray[1][[selectedArray[1] integerValue]] objectForKey:@"id"]
              sort:[chooseArray[2][[selectedArray[2] integerValue]] objectForKey:@"id"]
-             page:1];
+             page:pages];
 }
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
 	return _reloading;
+}
+
+#pragma mark - EGORefreshTableFooterDelegate
+//出发下拉刷新动作，开始拉取数据
+- (void)egoRefreshTableFooterDidTriggerRefresh:(EGORefreshTableFooterView*)view
+{
+    pages++;//下拉加载更多
+    [self getList: [selectedArray[3] isEqualToString:@"-1"]?
+     [chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"id"]
+                 :[[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"levelTwo"][[selectedArray[3] integerValue]]objectForKey:@"id"]
+             area:[chooseArray[1][[selectedArray[1] integerValue]] objectForKey:@"id"]
+             sort:[chooseArray[2][[selectedArray[2] integerValue]] objectForKey:@"id"]
+             page:pages];
+}
+//返回当前刷新状态：是否在刷新
+- (BOOL)egoRefreshTableFooterDataSourceIsLoading:(EGORefreshTableFooterView*)view
+{
+    return reloading;
+}
+-(BOOL)egoRefreshTableFooterIsEnd
+{
+    if (allPage!=-1&&[allArray count]>=allPage) {
+        return YES;
+    }else{
+        return NO;
+    }
 }
 @end
