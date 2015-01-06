@@ -63,9 +63,14 @@
             
             NSString *sectionBtnTitle = @"";
             if ([self.dropDownDataSource respondsToSelector:@selector(titleInSection:index:)]) {
-                sectionBtnTitle = [self.dropDownDataSource titleInSection:i index:[self.dropDownDataSource defaultShowSection:i]];
+                
+                if ([self.dropDownDataSource defaultShowSection:i]/100==0||[self.dropDownDataSource defaultShowSection:i]%100==0) {
+                    sectionBtnTitle =[self.dropDownDataSource titleInSection:i index:[self.dropDownDataSource defaultShowSection:i]/100 ];
+                }else{
+                    sectionBtnTitle =[self.dropDownDataSource titleInIndex:i index:[self.dropDownDataSource defaultShowSection:i]/100 seIndex:[self.dropDownDataSource defaultShowSection:i]%100];
+                }
             }
-            [selectedAry addObject:[NSString stringWithFormat:@"%d",[self.dropDownDataSource defaultShowSection:i]]];
+            [selectedAry addObject:[NSString stringWithFormat:@"%d",[self.dropDownDataSource defaultShowSection:i]/100]];
 
             UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(10+i*sectionWidth,(frame.size.height-15)/2, 15, 15)];
             [img setImage:[UIImage imageNamed:imgArray[i][0]]];

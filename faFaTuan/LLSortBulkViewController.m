@@ -15,6 +15,7 @@
 
 #import "LLBulkDetailViewController.h"
 #define drop_down_menu_h 40
+#define NAVITION_H 64
 @interface LLSortBulkViewController (){
     NSMutableArray *chooseArray ;
     NSMutableArray *initArray;
@@ -41,24 +42,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:_typeName];
+    //设置导航栏
+    [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:_typeTwoName==nil||_markTwo==0?_typeName:_typeTwoName];
     [HCNavigationAndStatusBarTool customLeftBackButton:self sel:@selector(goBack)];
-    [_myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-64-drop_down_menu_h)];
-
+    
+    //初始化table
+    [_myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-NAVITION_H-drop_down_menu_h)];
+    [self.myTableView registerNib:[UINib nibWithNibName:@"LLSortBulkTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SortBulks"];
     pages=1;
     allPage=-1;
+    
+    //设置下拉刷新
     _refreshHeaderView= [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f-self.myTableView.H, self.view.W, self.myTableView.H)];
     _refreshHeaderView.delegate = self;
     [self.myTableView addSubview:_refreshHeaderView];
     
+    //加载动画
+    animatImgView=[UIImageView startAnimationAt:self.view];
+    
+    //初始化数据
     chooseArray =[[NSMutableArray alloc]init];
     selectedArray =[[NSMutableArray alloc]initWithObjects:[NSString stringWithFormat:@"%d",_mark],@"0",@"0",@"-1", nil];
-    
-    [self.myTableView registerNib:[UINib nibWithNibName:@"LLSortBulkTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SortBulks"];
-
-    animatImgView=[UIImageView startAnimationAt:self.view];
-    [self getDropDownData];
     allArray =[[NSMutableArray alloc]init];
+    [self getDropDownData];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)goBack
@@ -125,8 +131,13 @@
     refreshView.delegate = self;
     _myTableView.tableFooterView=refreshView;
     reloading = NO;
-    
-    [self getList:[NSString stringWithFormat:@"%d",_mark==0?_mark:_mark+1000] area:@"0" sort:@"default" page:1];
+    if (_markTwo==0) {
+        [self getList:[NSString stringWithFormat:@"%d",_mark==0?_mark:_mark+1000] area:@"0" sort:@"default" page:1];
+    }else{
+        [self getList:[[chooseArray[0][_mark] objectForKey:@"levelTwo"][_markTwo]objectForKey:@"id"]
+                 area:@"0" sort:@"default" page:1];
+    }
+
 }
 -(NSMutableArray *)sortArray:(NSArray *)arys
 {
@@ -205,7 +216,7 @@
 -(NSInteger)defaultShowSection:(NSInteger)section
 {
     if (section==0) {
-        return _mark;
+        return _mark*100+_markTwo;
     }
     return 0;
 }
@@ -234,10 +245,6 @@
         return NO;
     }
 }
-
-
-
-
 
 -(void)getList:(NSString *)typeID area:(NSString*)areaID sort:(NSString *)sort page:(int) page
 {
@@ -283,14 +290,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     LLSortBulkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SortBulks"];
-    [cell.productTitle setText:[allArray[indexPath.row] objectForKey:@"supplier_name"]];
-    [cell.productDescribe setText:[allArray[indexPath.row] objectForKey:@"sub_title"]];
-    [cell.price setText:[allArray[indexPath.row] objectForKey:@"current_price"]];
-    [cell.originaPrice setText:[[allArray[indexPath.row] objectForKey:@"origin_price"]stringByAppendingString:@"元"]];
-    [cell.haveSales setText:[@"已售" stringByAppendingString:[allArray[indexPath.row] objectForKey:@"sale_count"] ]];
+    NSDictionary *dic = allArray[indexPath.row];
+    [cell.productTitle setText:[dic objectForKey:@"supplier_name"]];
+    [cell.productDescribe setText:[dic objectForKey:@"sub_title"]];
+    [cell.price setText:[dic objectForKey:@"current_price"]];
+    [cell.originaPrice setText:[[dic objectForKey:@"origin_price"]stringByAppendingString:@"元"]];
+    [cell.haveSales setText:[@"已售" stringByAppendingString:[dic objectForKey:@"sale_count"] ]];
     [cell.productImage setImage:[UIImage imageNamed:@"icon_loadingimage_merchang"]];
     //加载图片
-    NSString *imgString =[IMG_URL stringByAppendingString:[allArray[indexPath.row] objectForKey:@"img"]];
+    NSString *imgString =[IMG_URL stringByAppendingString:[dic objectForKey:@"img"]];
     cell.imageMark.text = imgString;//标记 要加载图片的 imageview是否已经加载图片
     NSURL *imgUrl=[NSURL URLWithString:imgString];
     if (hasCachedImage(imgUrl)) {
@@ -315,8 +323,6 @@
     bulkDetail.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:bulkDetail animated:YES];
 }
-
-
 #pragma mark -
 #pragma mark 下拉刷新
 //UIScrollViewDelegate Methods

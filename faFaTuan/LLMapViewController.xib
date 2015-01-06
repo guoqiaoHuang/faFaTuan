@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLMapViewController">
+            <connections>
+                <outlet property="mapView" destination="cX5-2z-LgR" id="he5-Fo-KPv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cX5-2z-LgR">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="nm4-hH-XZk"/>
+                    </connections>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cX5-2z-LgR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JSR-Ix-4FW"/>
+                <constraint firstItem="cX5-2z-LgR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jqf-qv-ss4"/>
+                <constraint firstAttribute="trailing" secondItem="cX5-2z-LgR" secondAttribute="trailing" id="eJd-dn-wuf"/>
+                <constraint firstAttribute="bottom" secondItem="cX5-2z-LgR" secondAttribute="bottom" id="y3q-he-HpK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="299" y="177"/>
+        </view>
+    </objects>
+</document>

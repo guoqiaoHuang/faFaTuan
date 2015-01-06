@@ -10,4 +10,5 @@
 
 @interface LLMoreSortViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIScrollView *myScrollview;
 @end

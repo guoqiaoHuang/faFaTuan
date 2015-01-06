@@ -23,5 +23,8 @@
 @property (nonatomic ,assign) int mark;
 @property (nonatomic ,strong) NSString *typeName;//分类名称
 
+@property (nonatomic ,assign) int markTwo;//二级分类序列
+@property (nonatomic ,strong) NSString *typeTwoName;//二级分类名称
+
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @end

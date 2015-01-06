@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>支付密码</string>
+			<key>img</key>
+			<string>icon_mine_myAccount_paypassword</string>
+			<key>mark</key>
+			<string>未设置</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>mark</key>
+			<string>修改</string>
+			<key>name</key>
+			<string>账户名</string>
+			<key>img</key>
+			<string>icon_mine_myAccount_username</string>
+		</dict>
+		<dict>
+			<key>mark</key>
+			<string>修改</string>
+			<key>name</key>
+			<string>登陆密码</string>
+			<key>img</key>
+			<string>icon_mine_myAccount_password</string>
+		</dict>
+		<dict>
+			<key>mark</key>
+			<string>绑定</string>
+			<key>name</key>
+			<string>未绑定手机</string>
+			<key>img</key>
+			<string>icon_mine_myAccount_phone</string>
+		</dict>
+		<dict>
+			<key>mark</key>
+			<string>修改/添加</string>
+			<key>name</key>
+			<string>收款地址</string>
+			<key>img</key>
+			<string>icon_mine_myAccount_address</string>
+		</dict>
+	</array>
+</array>
+</plist>

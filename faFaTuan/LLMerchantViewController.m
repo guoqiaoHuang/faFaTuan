@@ -11,11 +11,11 @@
 
 #import "DropDownListView.h"
 #import "LLASIHelp.h"
-#import "LLSortBulkTableViewCell.h"
+#import "LLMerchantTableViewCell.h"
 #import "ImageCacher.h"
 #import "FileHelpers.h"
 
-#import "LLBulkDetailViewController.h"
+#import "LLMerchantDetailViewController.h"
 #define drop_down_menu_h 40
 
 
@@ -46,9 +46,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //    [_myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-64-drop_down_menu_h-50)];
     [HCNavigationAndStatusBarTool setNavigationBackground:self];
-    [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:@"全部分类"];
-    [_myTableView setFrame:CGRectMake(0, drop_down_menu_h, self.view.W, WINDOW.H-64-drop_down_menu_h-50)];
+    [self addTabbarLeft];
     
     pages=1;
     allPage=-1;
@@ -56,14 +56,14 @@
     _refreshHeaderView.delegate = self;
     [self.myTableView addSubview:_refreshHeaderView];
     
+
+    [self.myTableView registerNib:[UINib nibWithNibName:@"LLMerchantTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SortBulks"];
+    animatImgView=[UIImageView startAnimationAt:self.view];
+    
     chooseArray =[[NSMutableArray alloc]init];
     selectedArray =[[NSMutableArray alloc]initWithObjects:@"0",@"0",@"0",@"-1", nil];
-    
-    [self.myTableView registerNib:[UINib nibWithNibName:@"LLSortBulkTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SortBulks"];
-    
-    animatImgView=[UIImageView startAnimationAt:self.view];
-    [self getDropDownData];
     allArray =[[NSMutableArray alloc]init];
+    [self getDropDownData];
 
 }
 
@@ -72,8 +72,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
+/**
+ *  tabBar 左上角（应用名称 和地址）
+ */
+-(void)addTabbarLeft
+{
+    UIView *viewLab =[[UIView alloc]initWithFrame:CGRectMake(IOS7_OR_LATER?0:10, 0,self.view.W*2.0/3.0,TABBAR_HEIGHT)];
+    UIImageView *appnames=[UIImageView allocInitWith:CGPointMake(viewLab.center.x-self.view.W/4, viewLab.center.y) imgName:@"发发团" view:viewLab];
+    [UILabel allocInitWith:CGRectMake(appnames.endX+5, 0, viewLab.W/2.0, TABBAR_HEIGHT) title:@"商家" font:15 color:[UIColor whiteColor] view:viewLab];
+    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:viewLab];
+}
 #pragma mark -- 获取数据
 -(void)getDropDownData
 {
@@ -104,10 +112,7 @@
         [areaAry insertObject:@{@"name": @"全城",@"id":@"0"} atIndex:0];
         //排序属性
         NSArray *descAry =@[@{@"name": @"默认",@"id":@"default"},
-                            @{@"name": @"评价最高",@"id": @"rate"},
-                            @{@"name": @"最新发布",@"id": @"create_time"},
-                            @{@"name": @"价格最高",@"id": @"price_desc"},
-                            @{@"name": @"价格最低",@"id": @"price_asc"}];
+                            @{@"name": @"评价最高",@"id": @"rate"}];
         [chooseArray addObject:areaAry];
         [chooseArray addObject:descAry];
         [self addSection];
@@ -161,18 +166,13 @@
     return myAry;
 }
 
-
-
 #pragma mark -- dropDownListDelegate
 -(void) chooseAtSection:(NSInteger)section index:(NSInteger)index seIndex:(NSInteger)seIndex
 {
-    [selectedArray replaceObjectAtIndex:section withObject:[NSString stringWithFormat:@"%d",index]];
+    [selectedArray replaceObjectAtIndex:section withObject:[NSString stringWithFormat:@"%ld",(long)index]];
     if (section==0) {
-        [selectedArray replaceObjectAtIndex:section+3 withObject:[NSString stringWithFormat:@"%d",seIndex]];
+        [selectedArray replaceObjectAtIndex:section+3 withObject:[NSString stringWithFormat:@"%ld",(long)seIndex]];
     }
-    //变换标题
-    [HCNavigationAndStatusBarTool setNavigationTitle:self
-                                            andTitle:[selectedArray[3] isEqualToString:@"-1"]||[selectedArray[3] isEqualToString:@"0"]?[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"name"]:[[chooseArray[0][[selectedArray[0] integerValue]] objectForKey:@"levelTwo"][[selectedArray[3] integerValue]]objectForKey:@"name"]];
     //更新tableView
     pages=1;
     [self getList: [selectedArray[3] isEqualToString:@"-1"]?
@@ -236,9 +236,6 @@
 }
 
 
-
-
-
 -(void)getList:(NSString *)typeID area:(NSString*)areaID sort:(NSString *)sort page:(int) page
 {
     NSMutableDictionary *dic =[[NSMutableDictionary alloc]init];
@@ -250,8 +247,8 @@
     [dic setObject:@"0" forKey:@"buy_type"];
     [dic setObject:@"20" forKey:@"page_size"];
     //获得街道列表
-    [LLASIHelp requestWithURL:URL(@"/deal/list") paramDic:dic resultBlock:^(NSDictionary *dic) {
-        allPage =[[dic objectForKey:@"total_count"] integerValue];
+    [LLASIHelp requestWithURL:URL(@"/shop/list") paramDic:dic resultBlock:^(NSDictionary *dic) {
+        allPage =[[dic objectForKey:@"total_count"] intValue];
         if (page==1) {
             allArray =[dic objectForKey:@"data"];
         }else{
@@ -282,21 +279,23 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    LLSortBulkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SortBulks"];
-    [cell.productTitle setText:[allArray[indexPath.row] objectForKey:@"supplier_name"]];
-    [cell.productDescribe setText:[allArray[indexPath.row] objectForKey:@"sub_title"]];
-    [cell.price setText:[allArray[indexPath.row] objectForKey:@"current_price"]];
-    [cell.originaPrice setText:[[allArray[indexPath.row] objectForKey:@"origin_price"]stringByAppendingString:@"元"]];
-    [cell.haveSales setText:[@"已售" stringByAppendingString:[allArray[indexPath.row] objectForKey:@"sale_count"] ]];
-    [cell.productImage setImage:[UIImage imageNamed:@"icon_loadingimage_merchang"]];
+    LLMerchantTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SortBulks"];
+    NSDictionary *dic =allArray[indexPath.row];
+    [cell.myTitleLable setText:[dic objectForKey:@"shop_name"]];
+    [cell.starView setScore:[[dic objectForKey:@"rate"] floatValue]/5 withAnimation:NO];
+    cell.starView.isCanTouch = NO;
+    [cell.evaluateNumLable setText:[NSString stringWithFormat:@"%@评价",[dic objectForKey:@"rate_total_count"]]];
+    [cell.addressLable setText:[dic objectForKey:@"address"]];
+    
+    [cell.myImageView setImage:[UIImage imageNamed:@"icon_loadingimage_merchang"]];
     //加载图片
-    NSString *imgString =[IMG_URL stringByAppendingString:[allArray[indexPath.row] objectForKey:@"img"]];
-    cell.imageMark.text = imgString;//标记 要加载图片的 imageview是否已经加载图片
+    NSString *imgString =[[dic objectForKey:@"img_domain"] stringByAppendingFormat:@"/shop_head/460.280/%@",[dic objectForKey:@"head_img"]];
+    cell.markLable.text = imgString;//标记 要加载图片的 imageview是否已经加载图片
     NSURL *imgUrl=[NSURL URLWithString:imgString];
     if (hasCachedImage(imgUrl)) {
-        [cell.productImage setImage:[UIImage imageWithContentsOfFile:pathForURL(imgUrl)]];
+        [cell.myImageView setImage:[UIImage imageWithContentsOfFile:pathForURL(imgUrl)]];
     }else{
-        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:imgUrl,@"url",cell.productImage,@"imageView",cell.imageMark,@"urlMark",imgString,@"urlString",nil];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:imgUrl,@"url",cell.myImageView,@"imageView",cell.markLable,@"urlMark",imgString,@"urlString",nil];
         [NSThread detachNewThreadSelector:@selector(cacheImage:) toTarget:[ImageCacher defaultCacher] withObject:dic];
     }
     return cell;
@@ -305,13 +304,13 @@
 #pragma mark-UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 90;
+    return 75;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    LLBulkDetailViewController *bulkDetail =[[LLBulkDetailViewController alloc]init];
-    bulkDetail.bulkDic =allArray[indexPath.row];
+    LLMerchantDetailViewController *bulkDetail =[[LLMerchantDetailViewController alloc]init];
+    bulkDetail.merchantDic =allArray[indexPath.row];
     bulkDetail.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:bulkDetail animated:YES];
 }
@@ -323,12 +322,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
     
-    [refreshView egoRefreshScrollViewDidScroll:scrollView];//下拉加载更多
+    [refreshView egoRefreshScrollViewDidScroll:scrollView];//上拉加载更多
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
     
-    [refreshView egoRefreshScrollViewDidEndDragging:scrollView];//下拉加载更多
+    [refreshView egoRefreshScrollViewDidEndDragging:scrollView];//上拉加载更多
 }
 //数据加载完成
 - (void)doneLoadingTableViewData{
@@ -378,6 +377,4 @@
         return NO;
     }
 }
-
-
 @end

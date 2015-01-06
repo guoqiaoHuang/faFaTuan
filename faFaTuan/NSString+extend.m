@@ -43,7 +43,7 @@
  */
 +(CGSize)getSizeForWith:(NSString *)value fontSize:(float)fontSize
 {
-    return [value sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(320, 320) lineBreakMode:NSLineBreakByWordWrapping];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
+    return [value sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(320, 300) lineBreakMode:NSLineBreakByWordWrapping];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
 }
 +(NSString *)removeNoUseZero:(NSString*) str
 {

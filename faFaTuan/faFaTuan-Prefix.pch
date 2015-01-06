@@ -20,6 +20,8 @@
     #import "LLASIHelp.h"
     #import "NSString+extend.h"
     #import "UIButton+extend.h"
+    #import "LLStore.h"
+
 
 
 
@@ -32,5 +34,6 @@
     //提示框
     #define SHOW(_message_)   [[[UIAlertView alloc]initWithTitle:@"提示" message:_message_ delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil,nil] show]
     #define WINDOW    [UIApplication sharedApplication].keyWindow
+    #define DefaultsStore [NSUserDefaults standardUserDefaults]
 
 #endif

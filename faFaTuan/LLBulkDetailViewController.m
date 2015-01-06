@@ -164,7 +164,6 @@
     LLBulkDetailTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"LLBulkDetailTableViewCell" owner:self options:nil] firstObject];
     cell.title.text =[_bulkDic objectForKey:@"supplier_name"];
     cell.subtitle.text =[allData objectForKey:@"sub_title"];
-    cell.subtitle.text =[allData objectForKey:@"sub_title"];
     if (![[allData objectForKey:@"is_refund_validtime"] isEqualToString:@"1"]) {
         cell.drawback.text =@"不支持随时退款";
         [cell.drawbackImg setImage:[UIImage imageNamed:@"icon_yes"]];

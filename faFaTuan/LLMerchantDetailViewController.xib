@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLMerchantDetailViewController">
+            <connections>
+                <outlet property="addressLable" destination="577-zr-neX" id="dKS-sQ-A5g"/>
+                <outlet property="commentName" destination="Ksd-2M-3CF" id="Vi6-0F-sjX"/>
+                <outlet property="commentNext" destination="cEr-Tj-jQt" id="I0U-ck-q8H"/>
+                <outlet property="commentStar" destination="iQh-a5-2Ki" id="Ln2-o4-xs4"/>
+                <outlet property="commentsLable" destination="seJ-t5-IIS" id="BZO-7y-HAd"/>
+                <outlet property="footerView" destination="O5M-GX-g8R" id="afd-Ws-e15"/>
+                <outlet property="headerImageView" destination="3md-C0-2D5" id="sj5-dN-Hd4"/>
+                <outlet property="headerTitleLable" destination="cPJ-nU-HlP" id="8UG-dD-YtI"/>
+                <outlet property="headerView" destination="fRG-JR-HnL" id="VP1-je-pHt"/>
+                <outlet property="lineImage" destination="uRe-9g-WLG" id="eYp-Aw-BIP"/>
+                <outlet property="markImg" destination="fHD-z3-PbS" id="pJV-yR-i2s"/>
+                <outlet property="myTableView" destination="iYN-R6-nPh" id="nPZ-B6-35z"/>
+                <outlet property="nextContentView" destination="36s-oM-LBl" id="MqL-bd-KEa"/>
+                <outlet property="noComment" destination="YMt-W6-hRp" id="g4n-Wq-3Bn"/>
+                <outlet property="noCommentAndTuan" destination="VDj-l0-zBK" id="y9S-4U-BP6"/>
+                <outlet property="rateLable" destination="UGt-5d-n88" id="N99-uc-13R"/>
+                <outlet property="starView" destination="Lak-tU-QaN" id="1k4-mv-goe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iYN-R6-nPh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="0.88627457618713379" green="0.88235300779342651" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="vlc-EH-rXx"/>
+                        <outlet property="delegate" destination="-1" id="4eb-Jc-ZdR"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725496530532837" green="0.93333339691162109" blue="0.92549026012420654" alpha="1" colorSpace="deviceRGB"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-152" y="297"/>
+        </view>
+        <view contentMode="scaleToFill" id="fRG-JR-HnL">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_text_frame" id="AyY-Xy-gua">
+                    <rect key="frame" x="-10" y="85" width="340" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.39999999999999997" y="0.49999999999999994" width="0.15000000000000002" height="0.15000000000000002"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_loadingimage_merchang" id="3md-C0-2D5">
+                    <rect key="frame" x="10" y="10" width="90" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Xbt-Fm-n8R" appends="YES" id="HRh-vz-tT2"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巴斯骆冰（大峡谷店）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cPJ-nU-HlP">
+                    <rect key="frame" x="110" y="10" width="200" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="Lak-tU-QaN" customClass="TQStarRatingView">
+                    <rect key="frame" x="110" y="46" width="85" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UGt-5d-n88">
+                    <rect key="frame" x="203" y="43" width="69" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.97254908084869385" green="0.58039218187332153" blue="0.23137256503105164" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4n6-nv-whg">
+                    <rect key="frame" x="267" y="91" width="53" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="icon_deal_phone">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="telPhoneButton:" destination="-1" eventType="touchUpInside" id="hsh-29-Mn1"/>
+                    </connections>
+                </button>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_merchant_address" id="AmZ-wp-5Mk">
+                    <rect key="frame" x="10" y="111" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="olW-X1-ngk" appends="YES" id="eOe-pv-St4"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市丰台区南三环西路收地大峡谷购物中心5层（电影院入口）" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="577-zr-neX">
+                    <rect key="frame" x="50" y="94" width="200" height="51"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="olW-X1-ngk" appends="YES" id="WEt-xn-JyY"/>
+                    </connections>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_deal_mergeFooter" id="gFf-TG-lUK">
+                    <rect key="frame" x="0.0" y="151" width="320" height="10"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.25" y="0.20000000000000001" width="0.39999999999999963" height="0.59999999999999964"/>
+                </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHD-z3-PbS">
+                    <rect key="frame" x="278" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="232" y="-145.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="O5M-GX-g8R">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_deal_mergeFooter" id="49K-a1-TzO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.25" y="0.20000000000000001" width="0.39999999999999963" height="0.59999999999999964"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评价" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QJQ-NO-J4S">
+                    <rect key="frame" x="10" y="20" width="34" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_text_frame" id="uRe-9g-WLG">
+                    <rect key="frame" x="-10" y="47" width="340" height="114"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.39999999999999997" y="0.49999999999999994" width="0.15000000000000002" height="0.15000000000000002"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小黄黄" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ksd-2M-3CF">
+                    <rect key="frame" x="10" y="60" width="51" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="iQh-a5-2Ki" customClass="TQStarRatingView">
+                    <rect key="frame" x="242" y="63" width="70" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄黄" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="seJ-t5-IIS">
+                    <rect key="frame" x="10" y="89" width="300" height="58"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="36s-oM-LBl">
+                    <rect key="frame" x="0.0" y="163" width="320" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看全部1672条评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cEr-Tj-jQt">
+                            <rect key="frame" x="10" y="4" width="267" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.15294118225574493" green="0.71764707565307617" blue="0.66274511814117432" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="M1t-vt-txg" appends="YES" id="gxw-tN-v6m"/>
+                            </connections>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mine_accountViewRightArrow" id="WaF-1o-c0p">
+                            <rect key="frame" x="300" y="8" width="8" height="15"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="M1t-vt-txg" appends="YES" id="alx-8d-nuK"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="576" y="267"/>
+        </view>
+        <tapGestureRecognizer id="olW-X1-ngk">
+            <connections>
+                <action selector="goMapView:" destination="-1" id="gq4-0c-5IB"/>
+                <outlet property="delegate" destination="-1" id="BqK-22-Yhz"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Xbt-Fm-n8R">
+            <connections>
+                <action selector="moreImage:" destination="-1" id="mwM-rJ-iBv"/>
+                <outlet property="delegate" destination="-1" id="uIL-KR-3Qf"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="M1t-vt-txg">
+            <connections>
+                <action selector="goCommentPage:" destination="-1" id="jHk-4I-DeY"/>
+                <outlet property="delegate" destination="-1" id="bYF-lg-2eq"/>
+            </connections>
+        </tapGestureRecognizer>
+        <view contentMode="scaleToFill" id="YMt-W6-hRp">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_deal_mergeFooter" id="oq4-QK-fqz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.25" y="0.20000000000000001" width="0.39999999999999963" height="0.59999999999999964"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无评价信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDX-Ms-FGS">
+                    <rect key="frame" x="8" y="18" width="102" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="230" y="247"/>
+        </view>
+        <view contentMode="scaleToFill" id="VDj-l0-zBK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_deal_mergeFooter" id="2Ta-MG-1Lz">
+                    <rect key="frame" x="0.0" y="40" width="320" height="10"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="0.25" y="0.20000000000000001" width="0.39999999999999963" height="0.59999999999999964"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无评价信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bdv-G8-tRj">
+                    <rect key="frame" x="8" y="61" width="102" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无团购信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aSc-sq-sJA">
+                    <rect key="frame" x="8" y="11" width="102" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="178" y="392"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_deal_mergeFooter" width="38" height="22"/>
+        <image name="icon_deal_phone" width="19" height="25"/>
+        <image name="icon_loadingimage_merchang" width="164" height="100"/>
+        <image name="icon_merchant_address" width="15" height="15"/>
+        <image name="icon_mine_accountViewRightArrow" width="24" height="42"/>
+        <image name="share_text_frame" width="294" height="114"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -47,7 +47,6 @@
 
     [self addTabbarLeft];
     animatImgView=[UIImageView startAnimationAt:self.view];
-
     [self getData];
     
 }
@@ -105,9 +104,9 @@
  */
 -(void)setHeader
 {
-    UIView *allView =[[UIView alloc]initWithFrame:CGRectMake(0, 0,self.view.W,self.view.W/2+50)];
+    UIView *allView =[[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.W,self.view.W/2+50)];
     //分割线以上的view
-    UIView *views =[[UIView alloc]initWithFrame:CGRectMake(0, 0,self.view.W,self.view.W/2)];
+    UIView *views =[[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.W,self.view.W/2)];
     [views setBackgroundColor:[UIColor whiteColor]];
     for (int i=0; i<HEADER_COUNT; i++) {
         UIImageView *imgView =[UIImageView allocInitWith:CGPointMake(views.W/8+(i%4)*views.W/4,views.H/4+(i/4)*views.H/2-7) imgName:(HEADER_COUNT-1)==i?@"more":[headerAry[i] objectForKey:@"uname"] view:views];

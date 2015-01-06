@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 wanglilong. All rights reserved.
 //
 typedef void(^getData)(NSDictionary *dic);
+typedef void(^getDataRe)(int re);
 typedef void(^cancelBlock)(void);
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
@@ -18,4 +19,6 @@ typedef void(^cancelBlock)(void);
     method  网络请求方法
  */
 +(ASIFormDataRequest *)requestWithURL:(NSString *)url paramDic:(NSDictionary *)params resultBlock:(getData)block cancelBlock:(cancelBlock)acancelBlock httpMethod:(NSString *)method;
+//返回数据为整数
++(ASIFormDataRequest *)requestWithURLReInt:(NSString *)url paramDic:(NSDictionary *)params resultBlock:(getDataRe)block cancelBlock:(cancelBlock)acancelBlock httpMethod:(NSString *)method;
 @end

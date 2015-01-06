@@ -7,7 +7,7 @@
 //
 
 #import "LLMoreSortViewController.h"
-
+#import "LLSortBulkViewController.h"
 @interface LLMoreSortViewController (){
     UIImageView *animatImgView;
     NSMutableArray*allData;
@@ -32,13 +32,12 @@
     // Do any additional setup after loading the view from its nib.
     [HCNavigationAndStatusBarTool setNavigationTitle:self andTitle:@"更多分类"];
     [HCNavigationAndStatusBarTool customLeftBackButton:self sel:@selector(goBack)];
-    animatImgView=[UIImageView startAnimationAt:self.view];
+    animatImgView=[UIImageView startAnimationAt:self.myScrollview];
     [self getData];
 }
 -(void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,12 +87,69 @@
     }
     
     [myAry insertObject:@{@"name": @"全部分类",@"id":@"0",@"levelTwo":@[]} atIndex:0];
-    
     return myAry;
 }
 #pragma mark  --设置btn--
 -(void)setTheBtns
 {
-    
+    UIEdgeInsets ed ={2,2,2,2};
+    for (int i=0; i<[allData count]; i++) {
+        NSDictionary *detailDic =[allData objectAtIndex:i];
+        if (i==0) {
+            UIImageView *allType =[UIImageView allocInitWithRect:CGRectMake(15, 15, self.myScrollview.W-15*2, 35) imgName:@"bg_morepage_subCell" view:self.myScrollview EdgeInsets:ed];
+            UILabel *lab =[UILabel allocInitWith:allType.frame title:[detailDic objectForKey:@"name"]font:14 color:[UIColor darkGrayColor] view:self.myScrollview];
+            [lab setTextAlignment:NSTextAlignmentCenter];
+
+            UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
+            [btn setFrame:allType.frame];
+            [self.myScrollview addSubview:btn];
+            [btn setTag:i*100+99];
+            [btn addTarget:self action:@selector(nextPage:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }else{
+            UIView *before=[self.myScrollview viewWithTag:((i-1)*100+99)];
+            UIImageView *markImg =[UIImageView allocInitWithRect:CGRectMake(15,before.endY+30, 17, 17) imgName:[detailDic objectForKey:@"uname"] view:self.myScrollview];
+            [markImg setTag:i+1];
+            [UILabel allocInitWith:CGRectMake(markImg.endX+5, markImg.Y, self.myScrollview.W-markImg.endX-5, 17) title:[detailDic objectForKey:@"name"] font:14 color:[UIColor darkGrayColor] view:self.myScrollview];
+
+            NSArray *levelAry =[detailDic objectForKey:@"levelTwo"];
+            for (int j=0; j<[levelAry count]; j++) {
+                UIImageView *allType =[UIImageView allocInitWithRect:CGRectMake(15+((self.myScrollview.W-15*4)/3+12)*(j%3),markImg.endY+15+50*(j/3), (self.myScrollview.W-15*2-12*2)/3, 35) imgName:@"bg_morepage_subCell" view:self.myScrollview EdgeInsets:ed];
+                if (j==([levelAry count]-1)) {
+                    [allType setTag:i*100+99];
+                }
+               
+                UILabel *lab =[UILabel allocInitWith:allType.frame title:[[levelAry objectAtIndex:j] objectForKey:@"name"]font:14 color:[UIColor darkGrayColor] view:self.myScrollview];
+                [lab setTextAlignment:NSTextAlignmentCenter];
+                
+                UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:allType.frame];
+                [self.myScrollview addSubview:btn];
+                [btn setTag:i*100+j];
+                [btn addTarget:self action:@selector(nextPage:) forControlEvents:UIControlEventTouchUpInside];
+                if (i==([allData count]-1)&&j==([levelAry count]-1)) {
+                    [_myScrollview setContentSize:CGSizeMake(_myScrollview.W, btn.endY+30)];
+                    return;
+                }
+            }
+            if (i==[allData count]-1) {
+                [_myScrollview setContentSize:CGSizeMake(_myScrollview.W, markImg.endY+30)];
+            }
+        }
+    }
+}
+-(void)nextPage:(UIButton *)btn
+{
+    NSLog(@"%d",btn.tag);
+    LLSortBulkViewController *next =[[LLSortBulkViewController alloc]init];
+    next.typeName=[allData[btn.tag/100] objectForKey:@"name"];
+    next.mark=(btn.tag/100);//如果  对应的id发生变化需要更改
+    if (btn.tag/100!=0) {
+        next.typeTwoName=[[allData[btn.tag/100] objectForKey:@"levelTwo"][btn.tag%100] objectForKey:@"name"];
+        next.markTwo=btn.tag%100;
+    }
+    next.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:next animated:YES];
+
 }
 @end
